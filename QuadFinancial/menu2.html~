@@ -1,0 +1,43 @@
+<div id='cssmenu'>
+	<ul>
+		<li>
+			<a href='http://localhost/QuadFinancial/'><span>Home</span></a>
+		</li>
+		<li class='has-sub'><a href='http://localhost/QuadFinancial/categories/'><span>Categories</span></a>
+			<ul>
+				<li class='last'><a href='http://localhost/QuadFinancial/categories/?add'><span>Add New Category</span></a></li>
+			</ul>
+		</li>
+		<li class='has-sub'><a href='http://localhost/QuadFinancial/accounts/'><span>Accounts</span></a>
+			<ul>
+				<li class='last'><a href='http://localhost/QuadFinancial/accounts/?add'><span>Add New Account</span></a></li>
+			</ul>
+		</li>
+		<li class='has-sub'><a href='http://localhost/QuadFinancial/users/'><span>Users</span></a>
+			<ul>
+				<li class='last'><a href='http://localhost/QuadFinancial/users/?add'><span>Add New User</span></a></li>
+			</ul>
+		</li>
+		<li><a href='http://localhost/QuadFinancial/chartOfAccounts/'><span>Chart Of Accounts</span></a></li>
+		<li class='has-sub'><a href='http://localhost/QuadFinancial/journal/'><span>Journal</span></a>
+			<ul>
+				<li><a href='http://localhost/QuadFinancial/journal/?pendingJournals'><span>Pending</span></a></li>
+				<li><a href='http://localhost/QuadFinancial/journal/?deletedJournals'><span>Deleted</span></a></li>
+				<li class='last'><a href='http://localhost/QuadFinancial/journal/?postedJournals'><span>Posted</span></a></li>
+			</ul>
+		</li>
+		<li class='has-sub last'><a href='http://localhost/QuadFinancial/Reports/'><span>Reports</span></a>
+			<ul>
+				<li><a href='http://localhost/QuadFinancial/Reports/TrialBalance/'><span>Trial Balance</span></a></li>
+				<li><a href='http://localhost/QuadFinancial/Reports/IncomeStatement/'><span>Income Statment</span></a></li>
+				<li><a href='http://localhost/QuadFinancial/Reports/RetainedEarnings/'><span>Statement Of Retained Earnings</span></a></li>
+				<li><a href='http://localhost/QuadFinancial/Reports/BalanceSheet/'><span>Balance Sheet</span></a></li>
+				<li class='last'><a href='http://localhost/QuadFinancial/Reports/Ratios/'><span>Ratio Anlysis </span></a></li>
+			</ul>
+		</li>
+	</ul>
+				<table style="border:none;background-color:transparent">
+					<th style="border:none;background-color:transparent">Hello <?php htmlout($_SESSION['userName']); ?>!</th>
+					<th style="border:none;background-color:transparent"><?php include 'logout.inc.html.php'; ?></th>
+				</table>
+</div>

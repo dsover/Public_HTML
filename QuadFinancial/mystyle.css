@@ -1,0 +1,131 @@
+h1 {color:#222;
+	text-shadow: 0px 2px 3px #555;}
+h2 {color:black;
+	text-shadow: 0px 2px 3px #555;
+	text-align:center}
+h3 {color:#222;
+	text-shadow: 0px 2px 3px #555;
+	font-size: 1.5em;
+	position:fixed;
+	}
+p {font-size: 1em;
+	color:brown;
+	margin-left:28px;
+	text-align: justify;}
+body {background-color:transparent; /*#F2F5DF;*/
+}
+table {
+	border-collapse:collapse;
+	width:60%;
+	min-width:300px;
+	margin-left:220px;
+}
+table,th,td{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-width: 1px;
+	border-color:grey;
+	border-style: inset;
+	background-color:#E4F2DC;
+	}
+td{
+	text-align:left;
+	}
+/*--------------------------------------------------------------------------------------*/
+#header {position: fixed;
+  top:0;
+  left:0;
+width:100%
+	}
+#header th{border:none}
+#header td{border:none}
+#entryform2{
+	margin-left:220px;
+	margin-top:240px;
+	background-color:#E4F2DC;
+	width:60%;
+	min-width:600px;
+}
+#entryform2 th{border:none}
+#entryform2 td{border:none}
+#entryform2 table{border:none}
+#entryform3{
+	margin-left:220px;
+
+	background-color:#E4F2DC;
+	width:60%;
+	min-width:600px;
+}
+#entryform3 th{border:none}
+#entryform3 td{border:none}
+#entryform3 table{border:none}
+/*--------------------------------------------------------------------------------------*/
+#category {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#category th{border:none}
+#category td{border:none}
+#account {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#account th{border:none}
+#account td{border:none}
+#user {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#user th{border:none}
+#user td{border:none}
+#entryform{
+	margin-left:220px;
+	margin-top:240px;
+	background-color:#E4F2DC;
+	width:60%;
+	min-width:600px;
+}
+/*--------------------------------------------------------------------------------------*/
+#ledger {
+	border-collapse:collapse;
+	margin-top:220px;
+}
+#ledger table{
+	margin-left:0px;
+	}
+#chart {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#chart th{border:none}
+#chart td{border:none}
+/*--------------------------------------------------------------------------------------*/
+#journalView{
+	margin:0px;
+	margin-top:240px;
+	width:60%;
+	min-width:300px;
+	margin-left:220px;
+	background-color:#E4F2DC;
+	width:70%;
+		}
+#singleJournalView{	margin:0px;
+	margin-top:240px;
+	width:60%;
+	min-width:300px;
+	margin-left:220px;
+	background-color:#E4F2DC;
+	width:70%;
+}
+#dataPoints{margin:0px;}
+/*--------------------------------------------------------------------------------------*/
+#report {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#report th{border:none}
+#report td{border:none}
