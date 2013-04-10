@@ -277,7 +277,7 @@ function getAccounts (){
 					,a.Name as "AccountName"
 				From Account a 
 				join Category c on c.Id = a.CategoryId
-				WHERE a.Deleted = FALSE
+				WHERE a.Deleted = FALSE 
 				ORDER BY c.Id, a.Code';
 		$accountResult = $pdo->query($accountsSql);
 	}catch (PDOException $e){

@@ -85,8 +85,8 @@
 				<?php endif;?>
 			<?php if($review !=1 ): ?><input type="submit" name="action" value="Submit" onclick="return confirm('Are you sure you want to submit this item?');"><?php endif; ?>
 			<?php if($review ==1 and $header == 'Pending' and userHasRole(1)): ?><input type="submit" name="postEntry" value="Post Journal Entry" onclick="return confirm('Are you sure you want to post this item?');"><?php endif; ?>
-			<?php if($review ==1 and $header == 'Pending' and userHasRole(1)): ?><input type="submit" name="deleteEntry" value="delete Journal Entry" onclick="return confirm('Are you sure you want to delete this item?');"><?php endif; ?>
-			<?php if($review ==1 and $header == 'Deleted' and userHasRole(1)): ?><input type="submit" name="unDeleteEntry" value="Un-delete Journal Entry" onclick="return confirm('Are you sure you want to Un-delete this item?');"><?php endif; ?>
+			<?php if($review ==1 and $header == 'Pending' and userHasRole(1)): ?><input type="submit" name="deleteEntry" value="Delete Journal Entry" onclick="return confirm('Are you sure you want to delete this item?');"><?php endif; ?>
+			<?php if($review ==1 and $header == 'Deleted' and userHasRole(1)): ?><input type="submit" name="unDeleteEntry" value="Un-Delete Journal Entry" onclick="return confirm('Are you sure you want to Un-delete this item?');"><?php endif; ?>
 
 		</form>
 

@@ -28,12 +28,10 @@
 	</head>
 	<body>
 		<?php if($review !=1){ include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php'; } ?>
-
 		<?php if (userHasRole(1)  and $review!=1 ){exit();}?>
 		<?php if(!$review): ?>
 			<?php include $_SERVER['DOCUMENT_ROOT'] .'QuadFinancial/journal/flyout.html.php' ?>
 			<div id="singleJournalView" >
-			<h1><?php if($review !=1){htmlout("Journal");} ?></h1>
 		<?php endif ?>
 		<form name="journal" action="?" id="journal" method="post" enctype="multipart/form-data">
 			Date: <input type="date" name="journalEntryDate" value="<?php htmlout($date); ?>" <?php if($review ==1){htmlout('readonly');}?>></br>

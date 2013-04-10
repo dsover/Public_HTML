@@ -172,7 +172,7 @@ if(isset($_GET['deletedJournals'])){
 if(isset($_GET['postedJournals'])){
 	$accounts = getAccounts();
 	$review = 1; 
-	$header = 'posted'; 
+	$header = 'Posted'; 
 	$Entries = getPostedEntries();
 	include 'journals.html.php';
 	exit();
