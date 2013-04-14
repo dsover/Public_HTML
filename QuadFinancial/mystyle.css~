@@ -12,7 +12,8 @@ p {font-size: 1em;
 	color:brown;
 	margin-left:28px;
 	text-align: justify;}
-
+body {background-color:transparent; /*#F2F5DF;*/
+}
 table {
 	border-collapse:collapse;
 	width:60%;

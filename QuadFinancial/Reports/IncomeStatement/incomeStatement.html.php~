@@ -9,7 +9,7 @@
 		<meta charset="utf-8">
 		<title>Reports</title>
 	</head>
-	<body style="background-color:#F2F5DF;">
+	<body>
 		<?php  if(!$printReport){include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php';} ?>
 		<?php if(!$printReport){include $_SERVER['DOCUMENT_ROOT'] .'QuadFinancial/Reports/flyout.html.php';} ?>
 		<div <?php if($printReport){echo("id='reportPrint'");}else{echo("id='report'");}?>>
@@ -17,11 +17,11 @@
 				<tr>
 					<td colspan="3">
 <?php if($printReport):?>
-	<h2><pre >			
-				QuadFinancial
-				Income Statement
-				<?php htmlout(date("F d, Y"));?>
-</pre></h2>
+	<h4><pre >			
+						QuadFinancial
+						Income Statement
+						<?php htmlout(date("F d, Y"));?>
+</pre></h4>
 <?php else: ?>
 		<h2>QuadFinancial</br>
 			Income Statement</br>

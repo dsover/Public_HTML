@@ -10,15 +10,23 @@
 		<title>Reports</title>
 	</head>
 	<body>
-		<?php  include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php'; ?>
-		<?php include $_SERVER['DOCUMENT_ROOT'] .'QuadFinancial/Reports/flyout.html.php' ?>
-		<div id="report">
-			<table>
+		<?php  if(!$printReport){include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php';} ?>
+		<?php if(!$printReport){include $_SERVER['DOCUMENT_ROOT'] .'QuadFinancial/Reports/flyout.html.php';} ?>
+		<div <?php if($printReport){echo("id='reportPrint'");}else{echo("id='report'");}?>>
+			<table <?php if($printReport){echo("id='reportPrint'");}?>>
 				<tr>
 					<td colspan="3">
-						<h2>QuadFinancial</br>
-						Balance Sheet</br>
-						December 31, 2011</h2>
+<?php if($printReport):?>
+	<h2><pre >			
+				QuadFinancial
+				Balance Sheet
+				<?php htmlout(date("F d, Y"));?>
+</pre></h2>
+<?php else: ?>
+		<h2>QuadFinancial</br>
+			Balance Sheet</br>
+			<?php htmlout(date("F d, Y"));?></h2>
+<?php endif ?>
 					</td>
 				</tr>
 				<tr>

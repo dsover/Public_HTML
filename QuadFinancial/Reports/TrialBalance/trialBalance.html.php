@@ -17,11 +17,11 @@
 				<tr>
 					<td colspan="3">
 <?php if($printReport):?>
-	<h2><pre >			
-				QuadFinancial
-				Trial Balance
-				<?php htmlout(date("F d, Y"));?>
-</pre></h2>
+	<h4><pre >			
+						QuadFinancial
+						Trial Balance
+						<?php htmlout(date("F d, Y"));?>
+</pre></h4>
 <?php else: ?>
 		<h2>QuadFinancial</br>
 			Trial Balance</br>
