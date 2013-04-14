@@ -100,4 +100,17 @@ include $_SERVER['DOCUMENT_ROOT'] . 'QuadFinancial/Reports/RetainedEarnings/inde
 		$sheTotal = $sheTotal +$newRetained;
 		$sheAndLiabTotal = $sheTotal + $liabTotal;
 	if ($fromRatio == TRUE){return;}
+
+
+if (isset($_POST['action'])){
+	$printReport=TRUE;
+	ob_start();
+		include('balanceSheet.html.php');
+		$div = ob_get_contents();
+	ob_end_clean();
+	$mpdf = new mPDF('','',8,'','','','','','','','L');
+	$mpdf->WriteHTML($div);
+	$mpdf->Output();
+	exit();
+}
 include 'balanceSheet.html.php';

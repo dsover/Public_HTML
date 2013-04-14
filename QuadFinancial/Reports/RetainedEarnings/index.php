@@ -1,6 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/magicquotes.inc.php';
-
+include_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/mpdf/mpdf.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/access.inc.php';
 $fromRetainedEarnings = TRUE;
 include $_SERVER['DOCUMENT_ROOT'] . 'QuadFinancial/Reports/IncomeStatement/index.php';
@@ -69,4 +69,16 @@ include $_SERVER['DOCUMENT_ROOT'] . 'QuadFinancial/Reports/IncomeStatement/index
 		$newRetained = $retainedAndIncome -$dividendTotal;
 
 if($fromBalanceSheet){return;}
+if (isset($_POST['action'])){
+$printReport=TRUE;
+ob_start();
+	include('retainedEarnings.html.php');
+	$div = ob_get_contents();
+ob_end_clean();
+$mpdf = new mPDF('','',8,'','','','','','','','L');
+//$mpdf->WriteHTML($stylesheet,1);
+$mpdf->WriteHTML($div);
+$mpdf->Output();
+exit();
+}
 include 'retainedEarnings.html.php';

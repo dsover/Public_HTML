@@ -63,7 +63,7 @@
 								size="10"
 								placeholder="amount"
 								name="currency[]"
-								value = "<?php if(review == 1){htmlout($currency[$i]);}else{htmlout($lineItem[$i]['currency']);} ?>"
+								value = "<?php if(review == 1){htmlout(curFormat($currency[$i]));}else{htmlout(curFormat($lineItem[$i]['currency']));} ?>"
 								pattern="^\d*(\.\d{2}$)?" size="4"
 								title="Currency Format - no dollar sign and no comma(s) - cents (.##) are optional"
 								<?php if($review ==1){htmlout('readonly');}?>/>

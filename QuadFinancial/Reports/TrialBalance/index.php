@@ -1,6 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/magicquotes.inc.php';
-
+include_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/mpdf/mpdf.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/access.inc.php';
 
 $firstCredit = TRUE;
@@ -37,6 +37,18 @@ include '../inc/helpers.inc.php';
 		}
 	}
 
+if (isset($_POST['action'])){
+$printReport=TRUE;
+ob_start();
+	include('trialBalance.html.php');
+	$div = ob_get_contents();
+ob_end_clean();
+$mpdf = new mPDF('','',8,'','','','','','','','L');
+//$mpdf->WriteHTML($stylesheet,1);
+$mpdf->WriteHTML($div);
+$mpdf->Output();
+exit();
+}
 
 include 'trialBalance.html.php';
 

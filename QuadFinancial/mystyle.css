@@ -129,3 +129,28 @@ width:100%
 }
 #report th{border:none}
 #report td{border:none}
+/*-------------------------------------------------------------------------------------*/
+#printButton{
+	margin-left:220px;
+}
+/*-------------------------------------------------------------------------------------*/
+#reportPrint {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+	background-color:transparent;
+}
+#reportPrint table{
+	float:none;
+	margin:0px;
+	border:none;
+	overflow:auto;
+	padding:0;
+	width:100%;
+	background-color:transparent;}
+#reportPrint th{
+	border:none;
+	background-color:transparent;}
+#reportPrint td{
+	border:none;
+	background-color:transparent;}

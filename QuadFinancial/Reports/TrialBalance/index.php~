@@ -2,6 +2,10 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/magicquotes.inc.php';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/access.inc.php';
+
+$firstCredit = TRUE;
+$firstDebit = TRUE;
+
 include '../inc/helpers.inc.php';
 	try {
 	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';

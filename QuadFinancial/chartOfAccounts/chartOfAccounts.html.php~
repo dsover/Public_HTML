@@ -13,6 +13,7 @@
 	</head>
 	<body>
 		<?php include '../header.inc.html.php'; ?>
+		<?php include './flyout.html.php'?>
 		<div id="chart">
 			<?php $categoryNameFlag = 'xxx';
 			 foreach ($accounts as $account): 

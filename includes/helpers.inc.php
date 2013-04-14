@@ -7,3 +7,10 @@ function html($text)
 function htmlout($text){
 	echo html($text);
 	}
+
+function curFormat($cur){
+	return sprintf('%0.2f', $cur); 
+}
+function ratFormat($rat){
+	return sprintf('%0.3f', $rat);
+}

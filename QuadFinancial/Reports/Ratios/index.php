@@ -13,15 +13,15 @@ $netSales = getNetSales(); //TotalSales - Sales Returns and Allowances - Sales D
 $name = '';
 
 
-$debtToEquity = round((($sheTotal/$liabTotal)),2); //total liabilities / shareholders equity
+$debtToEquity = $sheTotal/$liabTotal; //total liabilities / shareholders equity
 	$debtToEquityColor = getColor('debtToEquity',$debtToEquity);
-$current = round((($curAsset/$curLiab)),2); //current assets / current liabilities
+$current = $curAsset/$curLiab; //current assets / current liabilities
 	$currentColor = getColor('current',$current);
-$quick = round((($curAsset/$inventories)),2); //(current assets - inventories) /current liabilites
+$quick = $curAsset/$inventories; //(current assets - inventories) /current liabilites
 	$quickColor = getColor('quick',$quick);
-$returnOnEquity = round((($netIncome/$sheTotal)),2); //Net Income/ Shareholders Equity
+$returnOnEquity = $netIncome/$sheTotal; //Net Income/ Shareholders Equity
 	$returnOnEquityColor = getColor('returnOnEquity',$returnOnEquity);
-$netProfitMargin = round((($netIncome/$netSales)),2); //Net Profit / Net Sales
+$netProfitMargin = $netIncome/$netSales; //Net Profit / Net Sales
 	$netProfitMarginColor = getColor('netProfitMargin',$netProfitMargin);
 
 if (isset($_GET['thresholds'])){

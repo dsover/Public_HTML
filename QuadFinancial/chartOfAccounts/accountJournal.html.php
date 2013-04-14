@@ -34,12 +34,8 @@
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($accountType); ?></td>
 					</tr>
 					<tr>
-						<td style="background-color:lightgrey;">InitalBalance</td>
-						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($InitialBalance); ?></td>
-					</tr>
-					<tr>
 						<td style="background-color:lightgrey;">CurrentBalance</td>
-						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout("$ ".$totalSum); ?></td>
+						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout("$ ".curFormat($totalSum)); ?></td>
 					</tr>
 				</tr>
 			</table>
@@ -60,8 +56,8 @@
 				<tr>
 					<td style="text-align:center;border:none"><?php htmlout($line['JournalId']) ?></td>
 					<td style="text-align:center;border:none"><?php htmlout($line['date']) ?></td>
-					<td style=";text-align:right;padding-right:5em;border:none"><?php if($line['debitOrCredit'] == "debit"){htmlout($line['amount']);} ?></td>
-					<td style=";text-align:right;padding-right:5em;border:none"><?php if($line['debitOrCredit'] == "credit"){htmlout($line['amount']);} ?></td>
+					<td style=";text-align:right;padding-right:5em;border:none"><?php if($line['debitOrCredit'] == "debit"){htmlout(curFormat($line['amount']));} ?></td>
+					<td style=";text-align:right;padding-right:5em;border:none"><?php if($line['debitOrCredit'] == "credit"){htmlout(curFormat($line['amount']));} ?></td>
 					<td style="border:none;padding-left:1em">
 						<label for="file" ></label>
 						<?php if($line['FileName']):?>
@@ -87,8 +83,8 @@
 				<tr>
 					<td style="border:none"></td>
 					<th style="border:none">Totals:</td>
-					<th style="text-align:right;padding-right:5em;border:none"><?php htmlout($totalDebits) ?></td>
-					<th style="text-align:right;padding-right:5em;border:none"><?php htmlout($totalCredits) ?></td>
+					<th style="text-align:right;padding-right:5em;border:none"><?php htmlout(curFormat($totalDebits)) ?></td>
+					<th style="text-align:right;padding-right:5em;border:none"><?php htmlout(curFormat($totalCredits)) ?></td>
 					<td style="border:none"></td>
 					<td style="border:none"></td>
 				</tr>
@@ -104,8 +100,8 @@
 				<tr>
 					<td style="border:none"></td>
 					<td style="border:none"></td>
-					<th style="text-align:right;padding-right:5em;border:none"><?php if($totalDebits > $totalCredits){htmlout($totalSum);}?></td>
-					<th style="text-align:right;padding-right:5em;border:none"><?php if($totalCredits > $totalDebits){htmlout($totalSum);}?></td>
+					<th style="text-align:right;padding-right:5em;border:none"><?php if($totalDebits > $totalCredits){htmlout(curFormat($totalSum));}?></td>
+					<th style="text-align:right;padding-right:5em;border:none"><?php if($totalCredits > $totalDebits){htmlout(curFormat($totalSum));}?></td>
 					<td style="border:none"></td>
 					<td style="border:none"></td>
 			</table>

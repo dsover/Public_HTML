@@ -12,8 +12,7 @@ p {font-size: 1em;
 	color:brown;
 	margin-left:28px;
 	text-align: justify;}
-body {background-color:transparent; /*#F2F5DF;*/
-}
+
 table {
 	border-collapse:collapse;
 	width:60%;
@@ -50,7 +49,7 @@ width:100%
 #entryform2 table{border:none}
 #entryform3{
 	margin-left:220px;
-	margin-top:240px;
+
 	background-color:#E4F2DC;
 	width:60%;
 	min-width:600px;
@@ -129,3 +128,28 @@ width:100%
 }
 #report th{border:none}
 #report td{border:none}
+/*-------------------------------------------------------------------------------------*/
+#printButton{
+	margin-left:220px;
+}
+/*-------------------------------------------------------------------------------------*/
+#reportPrint {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+	background-color:transparent;
+}
+#reportPrint table{
+	float:none;
+	margin:0px;
+	border:none;
+	overflow:auto;
+	padding:0;
+	width:100%;
+	background-color:transparent;}
+#reportPrint th{
+	border:none;
+	background-color:transparent;}
+#reportPrint td{
+	border:none;
+	background-color:transparent;}

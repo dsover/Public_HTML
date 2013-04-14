@@ -1,7 +1,7 @@
 <?php 
 	include $_SERVER['DOCUMENT_ROOT'] . 'includes/magicquotes.inc.php';
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/access.inc.php';
-
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/mpdf/mpdf.php';
 	if (!userIsLoggedIn()){
 		include '../login.html.php';
 		exit();
@@ -153,9 +153,21 @@ exit();
 		}
 
 
-
-
+if (isset($_POST['action'])){
+$printReport=TRUE;
+ob_start();
+	include('chartOfAccounts.html.php');
+	$div = ob_get_contents();
+ob_end_clean();
+$mpdf = new mPDF('','',8,'','','','','','','','L');
+//$mpdf->WriteHTML($stylesheet,1);
+$mpdf->WriteHTML($div);
+$mpdf->Output();
+exit();
+}
 
 
 include 'chartOfAccounts.html.php'; 
 ?>
+
+
