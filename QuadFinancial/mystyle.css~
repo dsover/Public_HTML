@@ -8,6 +8,10 @@ h3 {color:#222;
 	font-size: 1.5em;
 	position:fixed;
 	}
+h4 {
+	color:black;
+	text-align:center
+}
 p {font-size: 1em;
 	color:brown;
 	margin-left:28px;
@@ -31,13 +35,22 @@ td{
 	text-align:left;
 	}
 /*--------------------------------------------------------------------------------------*/
-#header {position: fixed;
+.header {position: fixed;
   top:0;
   left:0;
 width:100%
 	}
-#header th{border:none}
-#header td{border:none}
+.header th{border:none}
+.header td{border:none}
+/*--------------------------------------------------------------------------------------*/
+#entryform{
+	margin-left:220px;
+	margin-top:240px;
+	background-color:#E4F2DC;
+	width:60%;
+	min-width:600px;
+}
+/*--------------------------------------------------------------------------------------*/
 #entryform2{
 	margin-left:220px;
 	margin-top:240px;
@@ -48,6 +61,7 @@ width:100%
 #entryform2 th{border:none}
 #entryform2 td{border:none}
 #entryform2 table{border:none}
+/*--------------------------------------------------------------------------------------*/
 #entryform3{
 	margin-left:220px;
 
@@ -66,6 +80,7 @@ width:100%
 }
 #category th{border:none}
 #category td{border:none}
+/*--------------------------------------------------------------------------------------*/
 #account {
 	border-collapse:collapse;
 	margin-top:240px;
@@ -73,6 +88,7 @@ width:100%
 }
 #account th{border:none}
 #account td{border:none}
+/*--------------------------------------------------------------------------------------*/
 #user {
 	border-collapse:collapse;
 	margin-top:240px;
@@ -80,13 +96,6 @@ width:100%
 }
 #user th{border:none}
 #user td{border:none}
-#entryform{
-	margin-left:220px;
-	margin-top:240px;
-	background-color:#E4F2DC;
-	width:60%;
-	min-width:600px;
-}
 /*--------------------------------------------------------------------------------------*/
 #ledger {
 	border-collapse:collapse;
@@ -95,6 +104,7 @@ width:100%
 #ledger table{
 	margin-left:0px;
 	}
+/*--------------------------------------------------------------------------------------*/
 #chart {
 	border-collapse:collapse;
 	margin-top:240px;
@@ -112,6 +122,7 @@ width:100%
 	background-color:#E4F2DC;
 	width:70%;
 		}
+/*--------------------------------------------------------------------------------------*/
 #singleJournalView{	margin:0px;
 	margin-top:240px;
 	width:60%;
@@ -125,13 +136,14 @@ width:100%
 #report {
 	border-collapse:collapse;
 	margin-top:240px;
-	min-width:800px;
+	min-width:1600px;
 }
 #report th{border:none}
 #report td{border:none}
 /*-------------------------------------------------------------------------------------*/
 #printButton{
-	margin-left:220px;
+	margin-left:1180px;
+	position:fixed;
 }
 /*-------------------------------------------------------------------------------------*/
 #reportPrint {

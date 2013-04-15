@@ -12,6 +12,13 @@
 	<body>
 		<?php  if(!$printReport){include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php';} ?>
 		<?php if(!$printReport){include $_SERVER['DOCUMENT_ROOT'] .'QuadFinancial/Reports/flyout.html.php';} ?>
+		<?php if(!$printReport): ?>			
+			<form action="?" id="printButton" method="post" name="print">
+				<input type="submit" name="action" value="print"   
+				onclick="print.target='POPUPW'; 
+					POPUPW = window.open('about:blank','POPUPW','width=1600,height=1400');">
+			</form>
+		<?php endif ?>
 		<div <?php if($printReport){echo("id='reportPrint'");}else{echo("id='report'");}?>>
 			<table <?php if($printReport){echo("id='reportPrint'");}?>>
 				<tr>
@@ -92,12 +99,5 @@
 				</tr>
 			</table>
 		</div>
-		<?php if(!$printReport): ?>			
-			<form action="?" id="printButton" method="post" name="print">
-				<input type="submit" name="action" value="print"   
-				onclick="print.target='POPUPW'; 
-					POPUPW = window.open('about:blank','POPUPW','width=1600,height=1400');">
-			</form>
-		<?php endif ?>
 	</body>
 </html>

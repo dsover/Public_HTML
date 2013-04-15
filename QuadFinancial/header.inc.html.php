@@ -1,5 +1,5 @@
 <?php if (!userIsLoggedIn()): ?>
-<div id="header">
+<div class="header">
 <table style="width:100%;margin-left:0px">
 	<tr>
 		<th style="border-width: 0px;background-image: -webkit-linear-gradient(left, #396D2E 0%, #91A88C 100%);padding-top:4px;"><a href="/QuadFinancial/"><img src="/QuadFinancial/images/quad.jpg" alt="quad logo" width="100" height="120"></a></th>
@@ -18,7 +18,7 @@ elseif ($_SESSION['changePass'] ):
 else:
 ?>
 </div>
-<div id="header">
+<div class="header">
 <table style="width:100%;margin-left:0px">
 	<tr >
 		<th style="border-width: 0px;background-image: -webkit-linear-gradient(left, #396D2E 0%, #91A88C 100%);padding-top:4px;"><a href="/QuadFinancial/"><img src="/QuadFinancial/images/quad.jpg" alt="quad logo" width="100" height="120"></a></th>

@@ -14,3 +14,13 @@ function curFormat($cur){
 function ratFormat($rat){
 	return sprintf('%0.3f', $rat);
 }
+
+function getbgc($trcount)
+{
+
+$blue="\"background-color: #EEFAF6;\"";
+$green="\"background-color: #D4F7EB;\"";
+$odd=$trcount%2;
+    if($odd==1){return $blue;}
+    else{return $green;}    
+}
