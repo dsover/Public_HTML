@@ -52,7 +52,7 @@
 			</ul>
 		</li>
 	<?php if (userHasRole(1) ): ?>
-		<li class='has-sub last'><a href='/QuadFinancial/Reports/'><span>Reports</span></a>
+		<li class='has-sub'><a href='/QuadFinancial/Reports/'><span>Reports</span></a>
 			<ul>
 				<li><a href='/QuadFinancial/Reports/TrialBalance/'><span>Trial Balance</span></a></li>
 				<li><a href='/QuadFinancial/Reports/IncomeStatement/'><span>Income Statment</span></a></li>
@@ -63,5 +63,6 @@
 			</ul>
 		</li>
 	<?php endif; ?>
+		<li class='last'><a href='/QuadFinancial/FAQ/'><span>F.A.Q.</span></a></li>
 	</ul>
 </div>
