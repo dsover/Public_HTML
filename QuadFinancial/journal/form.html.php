@@ -93,7 +93,7 @@
 		<script type="text/javascript">
 			 var frmvalidator  = new Validator("journal");
 			frmvalidator.addValidation("journalEntryDate","req","Must enter a Date"); 
-			frmvalidator.addValidation("description","minlen=1","Must have a description");
+			//frmvalidator.addValidation("description","minlen=1","Must have a description");
 		</script>
 			<?php//htmlout( var_dump($_FILES['userfile']['name'])); ?></br>
 			<?php //htmlout( var_dump($lineItem)); ?></br>
