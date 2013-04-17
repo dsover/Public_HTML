@@ -116,6 +116,11 @@
 					<td style="text-align:right;padding-right:5em"><?php htmlout(curFormat($sheTotal)); ?></td>
 				</tr>
 				<tr>
+					<td></td>
+					<td style="text-align:center"></td>
+					<td style="text-align:right;padding-right:5em">------------------</td>
+				</tr>
+				<tr>
 					<th style="text-align:left;padding-top:2em"></td>
 					<td></th>
 					<th></td>
