@@ -9,7 +9,9 @@ function htmlout($text){
 	}
 
 function curFormat($cur){
-	return sprintf('%0.2f', $cur); 
+return number_format ( $cur , 2 , '.' , ',' );
+
+//	return sprintf('%0.2f', $cur); 
 }
 function ratFormat($rat){
 	return sprintf('%0.3f', $rat);
