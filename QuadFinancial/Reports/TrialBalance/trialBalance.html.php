@@ -38,8 +38,14 @@
 				</tr>
 				<tr>
 					<th></th>
-					<th style="text-align:right;padding-right:4em">Debits</th>
-					<th style="text-align:right;padding-right:4em">Credits</th>
+					<th style="text-align:right;padding-right:4em"><u>Debits</u></th>
+					<th style="text-align:right;padding-right:4em"><u>Credits</u></th>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="text-align:right;padding-right:4em"></br></td>
+					<td style="text-align:right;padding-right:4em"></td>
+				</tr>
 			<?php foreach($accounts as $account): ?>
 				<?php if ($account['value'] != 0): ?>
 				<tr>
