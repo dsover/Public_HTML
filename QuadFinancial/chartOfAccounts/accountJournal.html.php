@@ -14,27 +14,27 @@
 			<table id="<?php $_POST['name'] . 'Table' ?>" style="width:30%;min-width:400px">
 				<tr>
 					<tr>
-						<td style="background-color:lightgrey;">AccountName</td>
+						<td style="background-color:lightgrey;text-align:right;padding-right:1em">AccountName:</td>
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($acctCode."-".$name); ?></td>
 					</tr>
 					<tr>
-						<td style="background-color:lightgrey;">AccountCategory</td>
+						<td style="background-color:lightgrey;text-align:right;padding-right:1em">AccountCategory:</td>
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($categoryName); ?></td>
 					</tr>
 					<tr>
-						<td style="background-color:lightgrey;">Date Started</td>
+						<td style="background-color:lightgrey;text-align:right;padding-right:1em">Date Started:</td>
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($CreatedOn);?></td>
 					</tr>
 					<tr>
-						<td style="background-color:lightgrey;">NormalBalance</td>
+						<td style="background-color:lightgrey;text-align:right;padding-right:1em">NormalBalance:</td>
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($normBal);?></td>
 					</tr>
 					<tr>
-						<td style="background-color:lightgrey;">AccountType</td>
+						<td style="background-color:lightgrey;text-align:right;padding-right:1em">AccountType:</td>
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout($accountType); ?></td>
 					</tr>
 					<tr>
-						<td style="background-color:lightgrey;">CurrentBalance</td>
+						<td style="background-color:lightgrey;text-align:right;padding-right:1em">CurrentBalance:</td>
 						<td style="color:darkgreen;text-align:left;border:none;padding-left:1em"><?php htmlout("$ ".curFormat($totalSum)); ?></td>
 					</tr>
 				</tr>
