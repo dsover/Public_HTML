@@ -1,3 +1,5 @@
+body {background-color:transparent; /*#F2F5DF;*/
+}
 h1 {color:#222;
 	text-shadow: 0px 2px 3px #555;}
 h2 {color:black;
@@ -16,8 +18,6 @@ p {font-size: 1em;
 	color:brown;
 	margin-left:28px;
 	text-align: justify;}
-body {background-color:transparent; /*#F2F5DF;*/
-}
 table {
 	border-collapse:collapse;
 	width:60%;
@@ -38,10 +38,38 @@ td{
 .header {position: fixed;
   top:0;
   left:0;
-width:100%
+width:100%;
 	}
 .header th{border:none}
 .header td{border:none}
+.inthemiddle {
+		margin-top:240px;
+		margin-left:220px;
+		max-width:800px;}
+/*--------------------------------------------------------------------------------------*/
+#account {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#account th{border:none}
+#account td{border:none}
+/*--------------------------------------------------------------------------------------*/
+#category {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#category th{border:none}
+#category td{border:none}
+/*--------------------------------------------------------------------------------------*/
+#chart {
+	border-collapse:collapse;
+	margin-top:240px;
+	min-width:800px;
+}
+#chart th{border:none}
+#chart td{border:none}
 /*--------------------------------------------------------------------------------------*/
 #entryform{
 	margin-left:220px;
@@ -73,22 +101,6 @@ width:100%
 #entryform3 td{border:none}
 #entryform3 table{border:none}
 /*--------------------------------------------------------------------------------------*/
-#category {
-	border-collapse:collapse;
-	margin-top:240px;
-	min-width:800px;
-}
-#category th{border:none}
-#category td{border:none}
-/*--------------------------------------------------------------------------------------*/
-#account {
-	border-collapse:collapse;
-	margin-top:240px;
-	min-width:800px;
-}
-#account th{border:none}
-#account td{border:none}
-/*--------------------------------------------------------------------------------------*/
 #user {
 	border-collapse:collapse;
 	margin-top:240px;
@@ -104,14 +116,6 @@ width:100%
 #ledger table{
 	margin-left:0px;
 	}
-/*--------------------------------------------------------------------------------------*/
-#chart {
-	border-collapse:collapse;
-	margin-top:240px;
-	min-width:800px;
-}
-#chart th{border:none}
-#chart td{border:none}
 /*--------------------------------------------------------------------------------------*/
 #journalView{
 	margin:0px;
@@ -141,11 +145,6 @@ width:100%
 #report th{border:none}
 #report td{border:none}
 /*-------------------------------------------------------------------------------------*/
-#printButton{
-	margin-left:1180px;
-	position:fixed;
-}
-/*-------------------------------------------------------------------------------------*/
 #reportPrint {
 	border-collapse:collapse;
 	margin-top:240px;
@@ -166,3 +165,9 @@ width:100%
 #reportPrint td{
 	border:none;
 	background-color:transparent;}
+/*-------------------------------------------------------------------------------------*/
+#printButton{
+	margin-left:1180px;
+	position:fixed;
+}
+
