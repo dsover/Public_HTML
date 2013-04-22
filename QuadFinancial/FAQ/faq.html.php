@@ -11,324 +11,216 @@
 		<title>FAQ</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 		<script src="/javascript/jquery-1.3.2.min.js"></script>
-		<script src="./DOMControl.js"></script>
+		<script src="./application.js"></script>
 	</head>
 	<body>
 		<?php include '../header.inc.html.php'; ?>
 		<?php include './flyout.html.php'?>
 		<div id="faqs" class="inthemiddle">
-			<span>Q&A - help manual</span>
-				<h6>1. Login</h6>					
-				<div>
-					The steps to login. 					
-					<ol>
-						<li><span>The user selects the log in function.</span></li>
-						<li><span>The user is taken to the log in page.</span></li>
-						<li><span>The user is prompted for their login ID and password.</span></li>
-						<li><span>The user enters their log in ID and password into the proper fields.</span></li>
-						<li><span>The user selects enter.</span></li>
-						<li><span>The system validates user’s log in ID and password information.</span></li>
-						<li><span>The system accepts user’s log in ID and password information.</span></li>
-					</ol>
-					<span>If the system does not allow the log in please see your manager or IT professional</span>
-				</div>
-				<h6>2. Change Password</h6>
-				<div>
-					<span>Once logged into the system check change Password located on the right of the screen.</span>
-					<span>once this is done the system will show the change your password page. Here you will enter the new password. Any password must be at least eight characters long. At any time during the process you may "log out" or "exit" while changing your password.</span> 
-					<span>Steps:</span>
-						<ol>
-							<li><span>enter new password in the first text field.</span></li>
-							<li><span>re-enter the new password in the second field.</span></li>
-							<li><span>click change password.</span></li>
-							<li><span>click "ok" on the pop up conformation.</span></li>
+			<h1>FAQ/Help Manual</h1>
+			<ol>
+				<li>
+					<span id="header" class="question">Login</span><br>
+					<div id="sub" >
+						<span>The steps to login.</span>
+						<ol>	
+							<li><span>The user selects the log in function.</span></li>
+							<li><span>The user is taken to the log in page.</span></li>
+							<li><span>The user is prompted for their login ID and password.</span></li>
+							<li><span>The user enters their log in ID and password into the proper fields.</span></li>
+							<li><span>The user selects enter.</span></li>
+							<li><span>The system validates user’s log in ID and password information.</span></li>
+							<li><span>The system accepts user’s log in ID and password information.</span></li>
 						</ol>
-					<h5><b><u>ERRORS:</u></b></h5>
-					<div>			
-						<h5><b>Password must be at least 8 digits:</b></h5>
-							<div>
-								<span>This error notifies the user the entered password is too short. To continue:</span>
-								<ol>				
-									<li id="test"><span>click "ok"</span></li>
-									<li><span>enter a password that is at least 8 characters long.</span></li>
-								</ol>
-							</div>
-						<h5><b>Passwords do not match:</b></h5>
-						<div>
-							<span>This error notifies the user conformation password does not match the "new 	password".</span>
-							<ol>					
-								<li><span>click "ok"</span></li>
-								<li><span>re-enter the conformation password</span></li>
-								<li><span>click "change password"</span></li>
-							</ol>
-						</div>					
-						<h5><b>Password Required - a password was not entered:</b></h5>
-						<div>
+						<p class="error">If the system does not allow the log in please see your manager or IT professional</p>
+					</div>
+				</li>
+				<li>
+					<span id="header" class="question">Change Password</span>
+					<div id="sub" >
+							<p style="color:black"><br><span>Once logged into the system check change Password located on the right of the screen.</span>
+							<span>Once this is done the system will show the "Change your password" page. Here you will enter the new password. 
+									Any password must be at least eight characters long. At any time during the process you may "log out" or
+									"exit" while changing your password.</span> </p>
+							<span>Steps to change password:</span>							
 							<ol>
-								<li><span>enter a password into the "new password" field</span></li>
-								<li><span>enter the same password just entered into the "Confirm password" field </span></li>
-								<li><span>click " change password"</span></li>
-							</ol>					
-						</div>
-					</div>
-				</div>
-				<h6>3. Journal</h6>
-				<div>
-				A journal entry is composed of 7 parts.
-					<ol>
-						<li>Select date</li>
-						<li>Add description of the entry</li>
-						<li>At least 2 accounts that have been selected from the drop down menu under the account tab.</li>
-						<li>A debit must be selected for at least one account</li>
-						<li>A credit must be selected for at least one account</li>
-						<li>An amount of money must be entered for each account that is debited and credit. The amounts that you have entered must be equal. In the case that there are multiple debits and credits the amounts entered as debit must be equal to the amount of credits.</li>  
-						<li>The last thing to be done is to upload a source document by clicking "choose File". This will open a new window that will allow you to select a file from any folder/file that is an image. Currently the application does not support multiple file upload to work around this zip up files into an archive then upload the archive </li>
-					</ol>
+								<li><span>Enter new password in the first text field.</span></li>
+								<li><span>Re-enter the new password in the second field.</span></li>
+								<li><span>Click change password.</span></li>
+								<li><span>Click "ok" on the pop up conformation.</span></li>
+							</ol><br>
+							<span  id="header" class="error">ERRORS:</span>
+							<div class="errorText">
+								<ul>
+									<li><span class="errorDetail">Password must be at least 8 digits:</span>
+											<span>This error notifies the user the entered password is too short. To continue:</span>
+												<ol>				
+												<li><span>Click "ok"</span></li>
+												<li><span>Enter a password that is at least 8 characters long.</span></li>
+												</ol>
+									</li>
+									<li><span class="errorDetail">Passwords do not match:</span>
+											<span>This error notifies the user conformation password does not match the "new 	password".</span>
+											<ol>					
+												<li><span>Click "ok"</span></li>
+												<li><span>Re-enter the conformation password</span></li>
+												<li><span>Click "change password"</span></li>
+											</ol>
+									</li>
+									<li><span class="errorDetail">Password Required:</span>
+										<span>A password was not entered:</span>
+										<ol>
+											<li><span>Enter a password into the "new password" field</span></li>
+											<li><span>Enter the same password just entered into the "Confirm password" field </span></li>
+											<li><span>Click "change password"</span></li>
+										</ol>		
+									</li>
+								</ul>
+							</div>		
+						</div><br>
+				</li>
+				<li>
+					<span id="header" class="question">Journal</span>
+					<div id="sub" >
+						<span>A journal entry is composed of 7 parts.</span>
+							<ol>
+								<li><span>Select date</span></li>
+								<li><span>Add description of the entry</span></li>
+								<li><span>At least 2 accounts that have been selected from the drop down menu under the account tab.</span></li>
+								<li><span>A debit must be selected for at least one account</span></li>
+								<li><span>A credit must be selected for at least one account</span></li>
+								<li><span>An amount of money must be entered for each account that is debited and credit. The amounts that you have entered must be equal. In the case that there are multiple debits and credits the amounts entered as debit must be equal to the amount of credits.</span></li>
+								<li><span>The last thing to be done is to upload a source document by clicking "choose File". This will open a new window that will allow you to select a file from any folder/file that is an image. Currently the application does not support multiple file upload to work around this zip up files into an archive then upload the archive </span></li>
+							</ol>
 					
-					<span>To complete the journal entry click "Submit". A window will then appear 	asking for conformation. Click "Ok" to submit the entry for approval by 	the management.</span>
+						<br>
+						<p style="color:black">To complete the journal entry click "Submit". A window will then appear 	asking for conformation.
+							 Click "Ok" to submit the entry for approval by the management.</p>
 				
-				  <h5>ERRORS:</h5>
-				  <div>
-				  		<ul>
-							<li><b>"Must enter a date"</b> --- click "OK"; enter a date in the date field</li>
-							<li><b>"Must have a description"</b> --- click "OK"; enter a description in the description field</li>
-							<li><b>"Must have at least 1 credit and one debit"</b> --- Select a debit for one account; Select a credit for one account</li>
-							<li><b>"Missing account"</b> --- select an account for every debit and credit</li>
-							<li><b>"Missing amount"</b> --- enter an amount for every debit and credit</li>
-							<li><b>"Debit/Credit must be equal"</b> --- make sure that the credit and debit values equal each other</li>
-						</ul>
-					</div>
-				</div>
-				
-				
-				<span>3. Home menu<br></span>
-					<span>The home screen for Management and Employee varies. Please select your respected role as to not get confused.</span> 
-			
-				
-				4. Tool bar
-				a. Employee home menu
-				i. Home
-				The home button of the tool bar or side bar will take you back to the 'home screen where journal entries may be entered in the journal window.
-				
-
-
-				iii. Home 
-				By clicking the "Home" button the user will be directed to the home page.
-				iv. Chart of Accounts - from the drop down tool bar
-				Selections:
-					Account Ledger
-						Allows the user to view the Ledger
-	
-					Chart of accounts
-						Will show the user the Char of accounts 
-					From this view the user can select an account to view by
-				clicking "view" beside the account the user wants to view.
-
-				b. Management home menu
-				i. Home
-						By clicking the "Home" button the user will be directed to the home page.
-
-				ii. Categories
-				1. Categories
-				This view allows the user to view all the categories and either edit or delete a category.
-				To Delete a category 
-				click "Delete" below the category that you want to delete
-
-				2. Add new Categories
-				enter a "Name"
-				enter a "Description"
-				click "Add category"
-				click "Ok" once the pop up conformation appears
-
-				iii. Accounts
-				1. Accounts
-				Allows the user to search and view accounts
-				Search: the user has a few options on how to search for an account
-				Search by Name
-				Search by description
-				Search by user
-				Search by Category
-				Search by Deleted
-				click "search"
-
-				2. Add new Accounts
-				The user selects the add new Account from the Account tool bar.
-				The user must enter "account name".
-				The user must enter "account code".
-				The user must enter "beginning balance".
-				The user must enter "description of account".
-				The user must select "normal balance".
-				The user must select "type".
-				The user must select "category".
-				The user must select "is inventory".
-				The user must click "add account".
-
-				ERRORS:
-
-				"Name must Be valid"
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and enter a "account name".
-
-				"Must enter a code"
-				Pre-condition: The log in ID or password is not accepted by the system.
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and enter a "account code".
-
-				Must enter a Beginning Balance"
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and enter a "beginning balance".
-
-
-
-				"must have a descrption"
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and enter a "description".
-
-				"must have a Normal Balance"
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and select a "normal balance".
-
-				"must select a type"
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and select a "type".
-
-				"must select a category "
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and select a "category".
-
-				"must select is inventory"
-				click " adding new account " before entering a name.
-				the user will receive a pop up window.
-				click "ok" and select a "is inventory".
-
-
-				iv. Users
-				1. Users
-				2. Add new Users
-				the system will show all the user accounts on the system
-				the manager will have the ability to "manage" the user accounts"
-				the manager selects "add new user"
-				the manager will add "user name"
-				the manager will "set password"
-				the manager will "confirm password"
-				the manager will select "reset password on next login" (yes or no)
-				the manager will select "roles" for the new user
-				the manager will select "add user" to submit the new user account
-				ERRORS
-				must have a user name:
-				1. click " change password" before any info.
-				2. the user will receive a pop up window.
-				3. "must have a user name".
-				4. click "ok".
-
-				password must be at least 8 characters long:
-
-				1. click " change password" entering a password less than 8 characters.
-				2. the user will receive a pop up window.
-				3. "password must be at least 8 characters long".
-				4. click "ok"
-
-				manage user function
-				1. click " change password" before entering a password.
-				2. the user will receive a pop up window.
-
-				passwords don't match:
-				1. click " change password" entering a password and not confirming password.
-				2. the user will receive a pop up window.
-				3. "passwords don't match".
-				4. Click "ok".
-
-				must have a password:
-				1. click " change password" entering a password that exists.
-				2. the user will receive a pop up window.
-				3. "must have a password"
-				4. click "ok".
-
-				must choose a role:
-				1. click " change password" before selecting a roles.
-				2. the user will receive a pop up window.
-				3. "must choose a role".
-				4. click "ok".
-
-				v. Chart of Accounts
-				Allows the user to view the Chart of Accounts
-				vi. Journal
-				1.  Pending
-				Allows the manger to post or delete a journal entry if there is an entry pending
-				by clicking either
-				"Post journal entry" - will post entry
-				"Delete journal entry" - will delete entry
-				2. Deleted
-				Allows the manger to undelete a previously deleted journal entry
-				3. Posted
-								Show the manger all the posted journal entries.
-
-
-				4. posting
-					1. Select date
-					2. Add description of the entry
-					3. At least 2 accounts that have been selected from the drop down 		    menu under the account tab.
-					4. A debit must be selected for at least one account
-					5. A credit must be selected for at least one account
-					6. An amount of money must be entered for each account that is 	     	    debited and credit. The amounts that you have entered must be 	   	    equal. In the case that there are multiple debits and credits the 		    amounts entered as debit must be equal to the amount of credits.  
-					7. The last thing to be done is to upload a source document by clicking 		    "choose File". This will open a new window that will allow you to 	    	      select a file from any folder/file that is an image.
-					To complete the journal entry click "Submit". A window will then appear 	asking for conformation. Click "Ok" to submit the entry for approval by 	the management.
-
-				ERRORS:
-				"must enter a date" pop up window 
-				click "OK" 
-				enter a date in the date field
-
-				"Must have a description" pop up window
-				click "OK"
-				enter a description in the description field
-
-				"Must have at least 1 credit and one debit" Red error 
-				Select a debit for one account
-				Select a credit  for one account
-
-				"Missing account" Red error
-				select an account for every debit and credit
-				 "Missing amount" Red error
-				enter an amount for every debit and credit
-
-				"Debit/Credit must be equal" Red error
-				the debit and credits are not equal
-
-
-				vii. Reports
-				1. Trail Balance
-				shows Trail Balance
-				2. Income Statement
-				Shows Income Statement
-				3. Statement of Retained Earrings
-				shows Statement of Retained Earrings
-				4. Balance Sheet
-				Shows Balance sheet
-				5. Ratio Analysis
-				Shows Ratio Analysis
-				6. Ratio Threshold
-				Shows Ratio Threshold
-
-				5. Management Ratio window
-				a. Debt to Equity Ratio
-				A measure of a company's financial leverage calculated by dividing its total liabilities by stockholders' equity. It indicates what proportion of equity and debt the company is using to finance its assets.
-				b. Current Ratio
-				A liquidity ratio that measures a company's ability to pay short-term obligations. 
-				c. Quick Ratio
-				An indicator of a company's short-term liquidity. The quick ratio measures a company's ability to meet its short-term obligations with its most liquid assets. The higher the quick ratio, the better the position of the company.
-				d. Return on Equity (ROE)
-				The amount of net income returned as a percentage of shareholders equity. Return on equity measures a corporation's profitability by revealing how much profit a company generates with the money shareholders have invested. 
-				e. Net Profit Margin
-				A ratio of profitability calculated as net income divided by revenues, or net profits divided by sales. It measures how much out of every dollar of sales a company actually keeps in earnings.
-				Profit margin is very useful when comparing companies in similar industries. A higher profit margin indicates a more profitable company that has better control over its costs compared to its competitors. Profit margin is displayed as a percentage; a 20\% profit margin, for example, means the company has a net income of $0.20 for each dollar of sales. 
+						<br>
+						<span id="header" class="error">ERRORS:</span>
+							<div class="errorText">
+								<ul>
+									<li><span class="errorDetail">"Must enter a date"</span> --- click "OK"; enter a date in the date field</li>
+									<li><span class="errorDetail">"Must have a description"</span> --- click "OK"; enter a description in the description field</li>
+									<li><span class="errorDetail">"Must have at least 1 credit and one debit"</span> --- Select a debit for one account; Select a credit for one account</li>
+									<li><span class="errorDetail">"Missing account"</span> --- select an account for every debit and credit</li>
+									<li><span class="errorDetail">"Missing amount"</span> --- enter an amount for every debit and credit</li>
+									<li><span class="errorDetail">"Debit/Credit must be equal"</span> --- make sure that the credit and debit values equal each other</li>
+								</ul>
+							</div>
+					</div><br>
+				</li>
+				<li>
+					<span id="header" class="question">Add new Accounts</span>
+					<div id="sub" >
+						<ol>
+							<li><span>The user selects the add new Account from the Account tool bar.</span></li>
+							<li><span>The user must enter "account name".</span></li>
+							<li><span>The user must enter "account code".</span></li>
+							<li><span>The user must enter "beginning balance".</span></li>
+							<li><span>The user must enter "description of account".</span></li>
+							<li><span>The user must select "normal balance".</span></li>
+							<li><span>The user must select "type".</span></li>
+							<li><span>The user must select "category".</span></li>
+							<li><span>The user must select "is inventory".</span></li>
+							<li><span>The user must click "add account".</span></li>
+						</ol>
+						<br>
+						<span id="header" class="error">ERRORS:</span>
+							<div class="errorText">
+								<ul>
+									<li><span>"Name must Be valid" --- click "ok" and enter a "account name".</span></li>
+									<li><span>"Must enter a code" --- click "ok" and enter a "account code.</span></li>
+									<li><span>"Must enter a Beginning Balance" --- click "ok" and enter a "beginning balance".</span></li>
+									<li><span>"Must have a description" --- click "ok" and enter a "description".</span></li>
+									<li><span>"Must have a Normal Balance" --- click "ok" and select a "normal balance".</span></li>
+									<li><span>"Must select a type" --- click "ok" and select a "type".</span></li>
+									<li><span>"Must select a category" --- click "ok" and select a "category".</span></li>
+									<li><span>"Must select is inventory" --- click "ok" and select a "is inventory".</span></li>
+								</ul>
+							</div>
+					</div><br>
+				</li>
+				<li>
+					<span id="header" class="question">Chart Of Accounts</span>
+						<div id="sub">
+							<ol>
+								<li><span><b>Chart of accounts ---</b> Can be accessed from the tool bar. Once accessed, click "view" to view the account ledger for a specific account</span></li>
+								<li><span><b>Account Ledger ---</b>Contains detailed information about a specific account's posted journal entries</span></li>
+							</ol>
+						</div>
+				</li>
+				<li>
+					<span id="header" class="question">Add new Users</span>
+					<div id="sub" >
+						<ol>
+							<li><span>The system will show all the users on the system</span></li>
+							<li><span>The manager will have the ability to "manage" the user accounts"</span></li>
+							<li><span>The manager selects "add new user"</span></li>
+							<li><span>The manager will add "user name"</span></li>
+							<li><span>The manager will "set password"</span></li>
+							<li><span>The manager will "confirm password"</span></li>
+							<li><span>The manager will select "reset password on next login" (yes or no)</span></li>
+							<li><span>The manager will select "roles" for the new user</span></li>
+							<li><span>The manager will select "add user" to submit the new user account</span></li>
+						</ol>
+						<br>
+						<span id="header" class="error">ERRORS:</span>
+							<div class="errorText">
+								<ul>
+									<li><span>"Must have a user name" --- click "ok" and enter a name</span></li>
+									<li><span>"Password must be at least 8 characters long" --- click "ok" and enter a password of at least 8 characters</span></li>
+									<li><span>"Passwords don't match" --- click "ok"  and enter a matching password</span></li>
+									<li><span>"Must have a password" --- click "ok" and enter a password</span></li>
+									<li><span>"Must choose a role" --- click "ok" and select a role for the user</span></li>
+								</ul>
+							</div>
+					</div><br>
+				</li>
+				<li>
+					<span id="header" class="question">Add new Categories</span>
+					<div id="sub" >
+						<ol>
+							<li><span>Enter a "Name"</span></li>
+							<li><span>Enter a "Description"</span></li>
+							<li><span>Click "Add category"</span></li>
+							<li><span>Click "Ok" once the pop up conformation appears</span></li>
+						</ol>
+						<br>
+						<span id="header" class="error">ERRORS:</span>
+							<div class="errorText">
+								<ul>
+									<li><span>"Must enter a Name" --- click "ok" and enter a name</span></li>
+									<li><span>"Must have a description" --- click "ok" and enter a description</span></li>
+								</ul>
+							</div>
+					</div><br>
+				</li>
+				<li>
+					<span id="header" class="question">Reports</span>
+					<div id="sub" >
+						<p style="color:black">List of system reports that can be accessed from the tool bar</p>
+						<ol>
+							<li><span>Trail Balance</span></li>
+							<li><span>Income Statement</span></li>
+							<li><span>Statement of Retained Earrings</span></li>
+							<li><span>Balance Sheet</span></li>
+							<li><span id="header" class="question">Ratio Analysis</span>
+								<div id="sub">
+									<ol>
+										<li><span><b>Debt to Equity Ratio ---</b> A measure of a company's financial leverage calculated by dividing its total liabilities by stockholders' equity. It indicates what proportion of equity and debt the company is using to finance its assets.</span></li>
+										<li><span><b>Current Ratio ---</b> A liquidity ratio that measures a company's ability to pay short-term obligations.</span></li>
+										<li><span><b>Quick Ratio ---</b> An indicator of a company's short-term liquidity. The quick ratio measures a company's ability to meet its short-term obligations with its most liquid assets. The higher the quick ratio, the better the position of the company.</span></li>
+										<li><span><b>Return on Equity (ROE) ---</b> The amount of net income returned as a percentage of shareholders equity. Return on equity measures a corporation's profitability by revealing how much profit a company generates with the money shareholders have invested. </span></li>
+										<li><span><b>Net Profit Margin ---</b> A ratio of profitability calculated as net income divided by revenues, or net profits divided by sales. It measures how much out of every dollar of sales a company actually keeps in earnings. Profit margin is very useful when comparing companies in similar industries. A higher profit margin indicates a more profitable company that has better control over its costs compared to its competitors. Profit margin is displayed as a percentage; a 20\% profit margin, for example, means the company has a net income of $0.20 for each dollar of sales.</span></li>
+									</ol>
+								</div>
+							</li>
+						</ol>
+					</div><br>
+				</li>
+			</ol>
 		</div>
 	</body>
 </html>

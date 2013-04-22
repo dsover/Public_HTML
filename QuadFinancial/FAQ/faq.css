@@ -1,11 +1,12 @@
-#faqs h6  { cursor:pointer;
-				font-size:1.5em}
-#faqs h5 {cursor:pointer;
-				font-size:1.1em;
-				color:blue;}	
-#faqs b {}			
-#faqs span { }
-#faqs h6.active { color:#d74646; }
-#faqs h5.active { color:#d74646; }
-#faqs div { height:0; overflow:hidden; position:relative;}
-#faqs div p { padding:0; margin-bottom:15px; }
+#header{
+		font-weight:bold;
+		text-decoration:underline;
+		cursor:pointer;
+		font-size:1.1em;}
+#sub{display:none;}
+.question {color:#6600CC;}
+.errorText {
+		color:#500000;
+		display:none;}
+.error {color:#780000;}
+.errorDetail{font-weight:bold;}
