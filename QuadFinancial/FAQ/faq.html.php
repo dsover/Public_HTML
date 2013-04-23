@@ -38,7 +38,7 @@
 				<li>
 					<span id="header" class="question">Change Password</span>
 					<div id="sub" >
-							<p style="color:black"><br><span>Once logged into the system check change Password located on the right of the screen.</span>
+							<p><br><span>Once logged into the system check change Password located on the right of the screen.</span>
 							<span>Once this is done the system will show the "Change your password" page. Here you will enter the new password. 
 									Any password must be at least eight characters long. At any time during the process you may "log out" or
 									"exit" while changing your password.</span> </p>
@@ -94,7 +94,7 @@
 							</ol>
 					
 						<br>
-						<p style="color:black">To complete the journal entry click "Submit". A window will then appear 	asking for conformation.
+						<p>To complete the journal entry click "Submit". A window will then appear 	asking for conformation.
 							 Click "Ok" to submit the entry for approval by the management.</p>
 				
 						<br>
@@ -200,7 +200,7 @@
 				<li>
 					<span id="header" class="question">Reports</span>
 					<div id="sub" >
-						<p style="color:black">List of system reports that can be accessed from the tool bar</p>
+						<p>List of system reports that can be accessed from the tool bar</p>
 						<ol>
 							<li><span>Trail Balance</span></li>
 							<li><span>Income Statement</span></li>
@@ -214,6 +214,16 @@
 										<li><span><b>Quick Ratio ---</b> An indicator of a company's short-term liquidity. The quick ratio measures a company's ability to meet its short-term obligations with its most liquid assets. The higher the quick ratio, the better the position of the company.</span></li>
 										<li><span><b>Return on Equity (ROE) ---</b> The amount of net income returned as a percentage of shareholders equity. Return on equity measures a corporation's profitability by revealing how much profit a company generates with the money shareholders have invested. </span></li>
 										<li><span><b>Net Profit Margin ---</b> A ratio of profitability calculated as net income divided by revenues, or net profits divided by sales. It measures how much out of every dollar of sales a company actually keeps in earnings. Profit margin is very useful when comparing companies in similar industries. A higher profit margin indicates a more profitable company that has better control over its costs compared to its competitors. Profit margin is displayed as a percentage; a 20\% profit margin, for example, means the company has a net income of $0.20 for each dollar of sales.</span></li>
+									</ol>
+								</div>
+							</li>
+							<li><span id="header" class="question">Ratio Threshold</span>
+								<div id="sub">
+									<p>The Ratio thresholds are avalible for managers to set the trigger levels for the ratio dashboard each line must be saved individualy</p>
+									<ol>
+										<li><span><b>High --- </b>This is the upper boundry for the ratio</span></li>
+										<li><span><b>Low --- </b>This is the lower boundry for the ratio</span></li>
+										<li><span><b>IsHighBetter --- </b>This toggles how the dashboard responds to values. If set to yes, when ratio the value goes above the "High" boundry a green light will be shown; if no then when the ratio value over the "High" boundry a red light will be shown.</span></li>
 									</ol>
 								</div>
 							</li>
