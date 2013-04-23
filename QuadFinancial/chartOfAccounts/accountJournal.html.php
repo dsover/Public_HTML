@@ -82,7 +82,7 @@
 				</tr>
 				<tr>
 					<td style="border:none"></td>
-					<th style="border:none">Totals:</td>
+					<th style="border:none;text-align:right;padding-right:5em;">Totals:</td>
 					<th style="text-align:right;padding-right:5em;border:none"><?php htmlout(curFormat($totalDebits)) ?></td>
 					<th style="text-align:right;padding-right:5em;border:none"><?php htmlout(curFormat($totalCredits)) ?></td>
 					<td style="border:none"></td>
@@ -99,7 +99,7 @@
 				</tr>
 				<tr>
 					<td style="border:none"></td>
-					<td style="border:none"></td>
+					<td style="border:none;text-align:right;padding-right:5em;"><b>Total Balance:</b></td>
 					<th style="text-align:right;padding-right:5em;border:none"><?php if($totalDebits > $totalCredits){htmlout(curFormat($totalSum));}?></td>
 					<th style="text-align:right;padding-right:5em;border:none"><?php if($totalCredits > $totalDebits){htmlout(curFormat($totalSum));}?></td>
 					<td style="border:none"></td>
