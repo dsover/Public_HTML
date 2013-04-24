@@ -53,7 +53,7 @@
 					<td style="text-align:right;padding-right:4em"><?php htmlout(curFormat($retainedAndIncome)); ?></td>
 				</tr>
 				<tr>
-					<th style="text-align:left;padding-left:3em">Less:Dividends</th>
+					<th style="text-align:left;padding-left:3em">Less: Dividends</th>
 					<td style="text-align:right;padding-right:4em"><?php htmlout(curFormat($dividendTotal)); ?></td>
 				</tr>
 				<tr>

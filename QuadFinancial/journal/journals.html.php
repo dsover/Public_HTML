@@ -25,7 +25,7 @@
 				<h1>There are no <?php htmlout($header); ?> Journals</h1>
 			<?php exit(); ?>
 			<?php endif;?>
-					<h1><?php htmlout($header. ' Entry-' . ($entry+1)); ?></h1>
+					<h1><?php htmlout($header. ' Entry--' . 'Journal Id # ' . ($k[0])); ?></h1>
 					<?php
 							$journalId= $k[0];
 							$date = $k[1];

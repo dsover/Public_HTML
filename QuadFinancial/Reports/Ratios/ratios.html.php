@@ -20,27 +20,27 @@
 					<th>Status</th>
 				</tr>
 				<tr>
-					<td>Debt To Equity Ratio:</td>
+					<td  style="text-align:left;padding-left:3em">Debt To Equity Ratio:</td>
 					<td><?php htmlout(ratFormat($debtToEquity)); ?></td>
 					<td style="text-align:center"><img src="/QuadFinancial/images/<?php echo($debtToEquityColor);?>.jpg" alt="<?php echo($debtToEquityColor);?>" width="40" height="40"></td>
 				</tr>
 				<tr>
-					<td>Current Ratio</td>
+					<td style="text-align:left;padding-left:3em">Current Ratio:</td>
 					<td><?php htmlout(ratFormat($current)); ?></td>
 					<td style="text-align:center"><img src="/QuadFinancial/images/<?php echo($currentColor);?>.jpg" alt="<?php echo($currentColor);?>" width="40" height="40"></td>
 				</tr>
 				<tr>
-					<td>Quick Ratio</td>
+					<td style="text-align:left;padding-left:3em">Quick Ratio:</td>
 					<td><?php htmlout(ratFormat($quick)); ?></td>
 					<td style="text-align:center"><img src="/QuadFinancial/images/<?php echo($quickColor);?>.jpg" alt="<?php echo($quickColor);?>" width="40" height="40"></td>
 				</tr>
 				<tr>
-					<td>Return on Equity (ROE)</td>
+					<td style="text-align:left;padding-left:3em">Return on Equity (ROE):</td>
 					<td><?php htmlout(ratFormat($returnOnEquity)); ?></td>
 					<td style="text-align:center"><img src="/QuadFinancial/images/<?php echo($returnOnEquityColor);?>.jpg" alt="<?php echo($returnOnEquityColor);?>" width="40" height="40"></td>
 				</tr>
 				<tr>
-					<td>Net Profit Margin</td>
+					<td style="text-align:left;padding-left:3em">Net Profit Margin:</td>
 					<td><?php htmlout(ratFormat($netProfitMargin)); ?></td>
 					<td style="text-align:center"><img src="/QuadFinancial/images/<?php echo($netProfitMarginColor);?>.jpg" alt="<?php echo($netProfitMarginColor);?>" width="40" height="40"></td>
 				</tr>
