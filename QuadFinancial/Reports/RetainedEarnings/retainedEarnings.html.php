@@ -62,11 +62,11 @@
 				</tr>
 				<tr>
 					<th style="text-align:left;padding-left:3em">Retained Earnings - Ending</th>
-					<td style="text-align:right;padding-right:4em">$ <?php htmlout(curFormat($newRetained )); ?></td>
+					<th style="text-align:right;padding-right:4em">$ <?php htmlout(curFormat($newRetained )); ?></th>
 				</tr>
 				<tr>
 					<th></th>
-					<td style="text-align:right;padding-right:4em">===============</td>
+					<th style="text-align:right;padding-right:4em">===============</th>
 				</tr>
 			</table>
 		</div>

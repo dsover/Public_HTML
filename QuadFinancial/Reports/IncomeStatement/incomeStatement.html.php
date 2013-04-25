@@ -84,8 +84,8 @@
 				</tr>
 				<tr>
 					<td></td>
-					<th></th>
-					<th style="text-align:right;padding-right:1em">--------------------------</td>
+					<td></td>
+					<td style="text-align:right;padding-right:1em">--------------------------</td>
 				</tr>
 				<tr>
 					<th style="text-align:left;padding-left:3em">Net Income</td>

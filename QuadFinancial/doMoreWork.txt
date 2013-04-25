@@ -1,0 +1,13 @@
+Filter by date on the journal pages
+add the date on the journal page
+
+on the posted page add poster
+on deleted page add who deleted
+
+
+when journal id is pressed on chart of accounts show the posted journal entry
+
+multipul file upload
+
+
+Add in who updated ratio
