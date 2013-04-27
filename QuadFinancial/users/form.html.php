@@ -58,6 +58,7 @@
 			<?php if($action== 'editform'):?>
 				<script type="text/javascript">
 					 var frmvalidator  = new Validator("?editform");
+					frmvalidator.addValidation("userName","req","Must have a User Name");
 					frmvalidator.addValidation("password","eqelmnt=passwordConfirm","Passwords Don't Match"); 
 				</script>
 			<?php endif; ?>
