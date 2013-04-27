@@ -53,7 +53,7 @@ if (isset($_GET['addform'])){
 try{
 	$sql = 'Insert Into Account set
 						Name = :Name,
-						InitialBalance = :InitialBalance,
+						InitialBalance = 0,
 						Code = :Code,
 						CategoryId = :CategoryId,
 						UserId = :UserId,
@@ -63,7 +63,6 @@ try{
 						isInventory = :isInventory;';
 	$s = $pdo->prepare($sql);
 	$s->bindValue(':Name', $_POST['accountName']);
-	$s->bindValue(':InitialBalance', $_POST['accountBeginingBalance']);
 	$s->bindValue(':Code', $_POST['accountCode']);
 	$s->bindValue(':CategoryId', $_POST['categoryId']);
 	$s->bindValue(':UserId', $_SESSION['userId']);
@@ -73,7 +72,7 @@ try{
 	$s->bindValue(':isInventory',$_POST['isInventory']);
 	$s->execute();
 	} catch (PDOException $e){
-		$error = 'Error adding account.';
+		$error = $e.'Error adding account.';
 		include 'error.html.php';
 		exit();
 	}
@@ -146,7 +145,7 @@ if (isset($_GET['editform'])){
 	try{
 		$sql = 'UPDATE Account SET
 				Name = :Name,
-				InitialBalance = :InitialBalance,
+				InitialBalance = 0,
 				Code = :Code,
 				CategoryId = :CategoryId,
 				AlteredOn = NOW(),
@@ -157,7 +156,6 @@ if (isset($_GET['editform'])){
 			WHERE Id = :Id';
 	$s = $pdo->prepare($sql);
 	$s->bindValue(':Name', $_POST['accountName']);
-	$s->bindValue(':InitialBalance', $_POST['accountBeginingBalance']);
 	$s->bindValue(':Code', $_POST['accountCode']);
 	$s->bindValue(':CategoryId', $_POST['categoryId']);
 	$s->bindValue(':Description', $_POST['description']);

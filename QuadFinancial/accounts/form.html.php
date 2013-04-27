@@ -29,10 +29,6 @@
 					<input id="accountCode" name="accountCode" value="<?php htmlout($accountCode); ?>" placeholder="account code">
 				</div>
 				<div>
-					<label for="accountBeginingBalance">Begining Account Balance: </label>
-					<input id="accountBeginingBalance" name="accountBeginingBalance" value="<?php htmlout($accountBeginingBalance); ?>" placeholder="initial balance">
-				</div>
-				<div>
 					<label for="description">Description of Account: </label>
 					<input id="description" name="description" value="<?php htmlout($description); ?>" placeholder="account description">
 				</div>
@@ -90,12 +86,12 @@
 			frmvalidator.addValidation("accountName","req","Must enter a Name"); 
 			frmvalidator.addValidation("accountCode","req","Must enter a Code"); 
 			frmvalidator.addValidation("accountCode","numeric","Code must be a number");
-			frmvalidator.addValidation("accountBeginingBalance","req","Must enter a Beginning Balance"); 
-			frmvalidator.addValidation("accountBeginingBalance","numeric","Code must be a number");
 			frmvalidator.addValidation("description","req","Must have a description");
-			frmvalidator.addValidation("categoryId","selone_radio","Must choose a Category");
 			frmvalidator.addValidation("normalBalance","selone_radio","Must choose a Normal Balance");
 			frmvalidator.addValidation("type","selone_radio","Must choose an account type");
+			frmvalidator.addValidation("categoryId","selone_radio","Must choose a Category");
+			frmvalidator.addValidation("isInventory","selone_radio","Must choose a selection for Is Inventory");
+
 		</script>
 		<p><a href="previous.html" onClick="history.back();return false;">Exit</a></p>
 
