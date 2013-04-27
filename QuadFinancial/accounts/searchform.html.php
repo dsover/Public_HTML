@@ -9,18 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="/javascript/jquery.AddIncSearch-master/jquery.AddIncSearch.css">
 		<meta charset="utf-8">
 		<title>Manage Accounts</title>
-		<script type="text/javascript" src="/javascript/jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="/javascript/jquery.AddIncSearch-master/jquery.AddIncSearch.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-				jQuery("select").AddIncSearch({
-				maxListSize: 5,
-				maxMultiMatch: 15,
-				warnMultiMatch: 'top {0} matches ...',
-				warnNoMatch: 'no matches ...'
-				});
-			});
-		</script>
+
 	</head>
 	<body>
 		<?php  include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php'; ?>
