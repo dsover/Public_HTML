@@ -99,6 +99,8 @@
 			<?php //htmlout( var_dump($lineItem)); ?></br>
 			<?php// htmlout( var_dump($lineItem)); ?></br>
 		<?php if($review ==1 ): ?><b>Created By: <?php htmlout($user);?></b><?php endif?>
+		<?php if($header == 'Deleted'): ?><br><b>Deleted By: <?php htmlout("$admin");?></b><?php endif?>
+		<?php if($header == 'Posted'): ?><br><b>Posted By: <?php htmlout("$admin");?></b><?php endif?>
 		<?php if(!$review): ?></div><?php endif ?>
 	</body>
 </html>

@@ -26,6 +26,8 @@
 				<option value=" Order by thisJournalId asc">Journal Id Assending</option>
 				<option value=" Order by userName desc">User Descending</option>
 				<option value=" Order by userName asc">User Asscending</option>
+				<option value=" Order by Date desc">Date Descending</option>
+				<option value=" Order by Date asc">Date Asscending</option>
 			</select>
 		</form>
 			<?php foreach($Entries as $entry => $k):?>
@@ -41,6 +43,7 @@
 							$description= $k[2];
 							$lineItem = $k[3];
 							$user = $k[4];
+							$admin = $k[6];
 							$fileName = $k[5];
 							$_SESSION['$journalLineItems'] = count($k[3]);
 							include 'form.html.php'; 

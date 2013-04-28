@@ -241,10 +241,12 @@ if (isset($_POST['deleteEntry'])){
 	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 	try{
 		$sql = 'UPDATE JournalEntry SET 
-							Deleted = TRUE
+							Deleted = TRUE,
+							AuthorizerUserId = :UserId
 			WHERE Id = :journalId;';
 		$s=$pdo->prepare($sql);
 		$s->bindValue(':journalId', $_POST['journalId']);
+		$s->bindValue(':UserId', $_SESSION['userId']);
 		$s->execute();
 	} catch (PDOException $e){
 		$error = 'Error Deleting journal.' . $e;
@@ -398,11 +400,13 @@ function getDeletedEntries($s){
 							,dp.Amount as "currency"
 							,u.UserName as "userName"
 							,je.SupportingDocumentName as "thisFileName"
+							,u2.UserName as "AuthorizerName"
 						FROM 
 							JournalEntry je
 							join DataPoints dp on dp.JournalEntryId = je.Id
 							join Account a on a.Id = dp.AccountId
 							join User u on je.PosterUserId = u.Id
+							join User u2 on je.AuthorizerUserId = u2.Id
 						WHERE
 							 je.Deleted = TRUE';
 		$deletedSql = $deletedSql . $s;
@@ -433,7 +437,8 @@ function getDeletedEntries($s){
 						$description = $thisDescription,
 						$lineItems,
 						$thisUserId,
-						$thisFileName);
+						$thisFileName,
+						$thisAdmin);
 					$lineItems = array();
 					$lineItems[] =	array('lineId' => $k,
 							'accountId' => $row['accountId'],
@@ -449,13 +454,15 @@ function getDeletedEntries($s){
 		$thisDescription = $row['description'];
 		$journalIdFlag =$row['thisJournalId'];
 		$thisFileName = $row['thisFileName'];
+		$thisAdmin = $row['AuthorizerName'];
 	} 
 	$lastEntry[] = array(	$JournalId = $thisJournalId,
 						$date = $thisDate ,
 						$description = $thisDescription,
 						$lineItems,
 						$thisUserId,
-						$thisFileName);
+						$thisFileName,
+						$thisAdmin);
 	if($deletedEntries){
 		$deletedEntries = array_merge($deletedEntries,$lastEntry);
 	}else{
@@ -478,11 +485,13 @@ function getPostedEntries($s){
 							,dp.Amount as "currency"
 							,u.UserName as "userName"
 							,je.SupportingDocumentName as "thisFileName"
+							,u2.UserName as "AuthorizerName"
 						FROM 
 							JournalEntry je
 							join DataPoints dp on dp.JournalEntryId = je.Id
 							join Account a on a.Id = dp.AccountId
 							join User u on je.PosterUserId = u.Id
+							join User u2 on je.AuthorizerUserId = u2.Id
 						WHERE
 							 je.Posted = TRUE';
 		$postedSql = $postedSql . $s;
@@ -513,7 +522,8 @@ function getPostedEntries($s){
 						$description = $thisDescription,
 						$lineItems,
 						$thisUserId,
-						$thisFileName);
+						$thisFileName,
+						$thisAdmin);
 					$lineItems = array();
 					$lineItems[] =	array('lineId' => $k,
 							'accountId' => $row['accountId'],
@@ -529,13 +539,15 @@ function getPostedEntries($s){
 		$thisDescription = $row['description'];
 		$journalIdFlag =$row['thisJournalId'];
 		$thisFileName = $row['thisFileName'];
+		$thisAdmin = $row['AuthorizerName'];
 	} 
 	$lastEntry[] = array(	$JournalId = $thisJournalId,
 						$date = $thisDate ,
 						$description = $thisDescription,
 						$lineItems,
 						$thisUserId,
-						$thisFileName);
+						$thisFileName,
+						$thisAdmin);
 	if($postedEntries){
 		$postedEntries = array_merge($postedEntries,$lastEntry);
 	}else{
