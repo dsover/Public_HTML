@@ -121,11 +121,10 @@ z-index:3;
 #journalView{
 	margin:0px;
 	margin-top:240px;
-	width:60%;
 	min-width:300px;
 	margin-left:220px;
 	background-color:#E4F2DC;
-	width:70%;
+	width:950px;
 		}
 /*--------------------------------------------------------------------------------------*/
 #singleJournalView{	margin:0px;

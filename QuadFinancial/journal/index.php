@@ -17,7 +17,7 @@ $accounts = '';
 $debits = '';
 $currency = '';
 $file = '';
-
+$sortType= '';
 if (isset($_POST['action']) and ($_POST['action'] == 'Submit' or$_POST['action'] == 'addLine') ){
 	$date = $_POST['journalEntryDate'];
 	$description = $_POST['description'];
@@ -153,27 +153,40 @@ if($_POST['action'] == 'addLine'){
 }
 //-----------------------------------------------show pending entries
 $_SESSION['$journalLineItems'] =2;
-if(isset($_GET['pendingJournals'])){
+if(isset($_GET['sortPending'])){
+	$sortType=$_POST['sort'];
+	$sortForm = 'pending';
+}
+if(isset($_GET['sortDeleted'])){
+	$sortType=$_POST['sort'];
+	$sortForm = 'deleted';
+}
+if(isset($_GET['sortPosted'])){
+	$sortType=$_POST['sort'];
+	$sortForm = 'posted';
+}
+if(isset($_GET['pendingJournals']) || $sortForm == 'pending'){
 	$accounts = getAccounts();
 	$review = 1; 
 	$header = 'Pending'; 
-	$Entries = getPendingEntries();
+	$Entries = getPendingEntries($sortType);
 	include 'journals.html.php';
+var_dump($sortType);
 	exit();
 }
-if(isset($_GET['deletedJournals'])){
+if(isset($_GET['deletedJournals']) || $sortForm == 'deleted'){
 	$accounts = getAccounts();
 	$review = 1; 
 	$header = 'Deleted'; 
-	$Entries = getDeletedEntries();
+	$Entries = getDeletedEntries($sortType);
 	include 'journals.html.php';
 	exit();
 }
-if(isset($_GET['postedJournals'])){
+if(isset($_GET['postedJournals']) || $sortForm == 'posted'){
 	$accounts = getAccounts();
 	$review = 1; 
 	$header = 'Posted'; 
-	$Entries = getPostedEntries();
+	$Entries = getPostedEntries($sortType);
 	include 'journals.html.php';
 	exit();
 }
@@ -296,7 +309,7 @@ function getAccounts (){
 return $accountList;
 }
 
-function getPendingEntries(){
+function getPendingEntries($s){
 	try{
 		include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 		$pendingSql = 'SELECT 	je.Id as "thisJournalId"
@@ -314,9 +327,8 @@ function getPendingEntries(){
 							join Account a on a.Id = dp.AccountId
 							join User u on je.PosterUserId = u.Id
 						WHERE
-							Posted = FALSE AND je.Deleted != TRUE
-						ORDER BY
-							thisJournalId,debitOrCredit desc, accountId;';
+							Posted = FALSE AND je.Deleted != TRUE';
+		$pendingSql = $pendingSql . $s;
 		$journals = $pdo->query($pendingSql);
 		$journals->setFetchMode(PDO::FETCH_ASSOC);
 	}catch (PDOException $e){
@@ -374,7 +386,7 @@ function getPendingEntries(){
 }
 
 
-function getDeletedEntries(){
+function getDeletedEntries($s){
 	try{
 		include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 		$deletedSql = 'SELECT 	je.Id as "thisJournalId"
@@ -392,9 +404,8 @@ function getDeletedEntries(){
 							join Account a on a.Id = dp.AccountId
 							join User u on je.PosterUserId = u.Id
 						WHERE
-							 je.Deleted = TRUE
-						ORDER BY
-							thisJournalId,debitOrCredit desc, accountId;';
+							 je.Deleted = TRUE';
+		$deletedSql = $deletedSql . $s;
 		$journals = $pdo->query($deletedSql);
 		$journals->setFetchMode(PDO::FETCH_ASSOC);
 	}catch (PDOException $e){
@@ -454,7 +465,8 @@ function getDeletedEntries(){
 }
 
 
-function getPostedEntries(){
+function getPostedEntries($s){
+
 	try{
 		include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 		$postedSql = 'SELECT 	je.Id as "thisJournalId"
@@ -470,11 +482,10 @@ function getPostedEntries(){
 							JournalEntry je
 							join DataPoints dp on dp.JournalEntryId = je.Id
 							join Account a on a.Id = dp.AccountId
-							join User u on je.AuthorizerUserId = u.Id
+							join User u on je.PosterUserId = u.Id
 						WHERE
-							 je.Posted = TRUE
-						ORDER BY
-							thisJournalId,debitOrCredit desc, accountId;';
+							 je.Posted = TRUE';
+		$postedSql = $postedSql . $s;
 		$journals = $pdo->query($postedSql);
 		$journals->setFetchMode(PDO::FETCH_ASSOC);
 	}catch (PDOException $e){

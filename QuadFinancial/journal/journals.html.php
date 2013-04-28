@@ -17,8 +17,17 @@
 		<title><?php htmlout($header); ?> Journal Entries</title>
 	</head>
 	<body>
-		<?php  include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php'; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php'; ?>
 		<?php include $_SERVER['DOCUMENT_ROOT'] .'QuadFinancial/journal/flyout.html.php' ?>
+		<form name="sort" action="?<?php htmlout('sort'.$header);?>" id="printButton" method="post" >
+			<select name="sort" onchange="this.form.submit()">
+				<option value=''>Sort by</option>
+				<option value=" Order by thisJournalId desc">Journal Id Decending</option>
+				<option value=" Order by thisJournalId asc">Journal Id Assending</option>
+				<option value=" Order by userName desc">User Descending</option>
+				<option value=" Order by userName asc">User Asscending</option>
+			</select>
+		</form>
 			<?php foreach($Entries as $entry => $k):?>
 		<div id="journalView" >
 			<?php if ($review and !$Entries[0][0]):  ?>
