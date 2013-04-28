@@ -124,3 +124,4 @@ CREATE TABLE `RatioThreshold` (
   UNIQUE KEY (`Name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ;
+ALTER TABLE RatioThreshold ADD UserId int(11);
