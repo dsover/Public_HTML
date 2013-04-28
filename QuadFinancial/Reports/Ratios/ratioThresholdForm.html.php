@@ -38,7 +38,7 @@
 																<?php if($Ratio['higherIsBetter'] ==0){htmlout('checked');}  ?>/>
 										</td>
 										<input type="hidden" name="id" value="<?php echo $Ratio['id']; ?>">
-										<input  name="uname" value="<?php echo $_SESSION['userName'] ?>">
+										<input type="hidden" name="uname" value="<?php echo $_SESSION['userName'] ?>">
 										<td style="text-align:center;padding-left:2em;padding-right:2em"><input type="submit" name="action" value="update"></td>
 										<td style="text-align:center;padding-left:2em;padding-right:2em"><?php htmlout($Ratio['lastEditor']);?></td>
 									</tr>
