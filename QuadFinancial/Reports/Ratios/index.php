@@ -28,12 +28,14 @@ if (isset($_GET['thresholds'])){
 	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 	// Build the list of ratioThresholds
 	try{
-		$result = $pdo->query('SELECT Id, 
-								Name,
-								High,
-								Low,
-								HigherIsBetter
-							 FROM RatioThreshold;');
+		$result = $pdo->query('SELECT rt.Id, 
+								rt.Name,
+								rt.High,
+								rt.Low,
+								rt.HigherIsBetter,
+								u.UserName as LastEditor
+							 FROM RatioThreshold rt
+								join User u on u.Id = rt.UserId;');
 	}catch (PDOException $e){
 		$error = 'Error fetching list of ratio thresholds.';
 		include 'error.html.php';
@@ -45,11 +47,14 @@ if (isset($_GET['thresholds'])){
 						'name' => $row['Name'],
 						'high' => $row['High'],
 						'low' => $row['Low'],
-						'higherIsBetter' => $row['HigherIsBetter']);
+						'higherIsBetter' => $row['HigherIsBetter'],
+						'lastEditor' => $row['LastEditor'],
+						'user' => $_SESSION['userName']);
 	}
 include 'ratioThresholdForm.html.php';
 exit();}
 if (isset($_POST['action']) and $_POST['action'] == 'update'){
+
 
 	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 	try{
@@ -57,7 +62,8 @@ if (isset($_POST['action']) and $_POST['action'] == 'update'){
 								Name = :Name,
 								High = :High,
 								Low = :Low,
-								HigherIsBetter = :HigherIsBetter
+								HigherIsBetter = :HigherIsBetter,
+								UserId = (select Id from User where UserName = :User)
 								Where Id = :Id;';
 	$s = $pdo->prepare($sql);
 	$s->bindValue(':Name', $_POST['name']);
@@ -65,6 +71,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'update'){
 	$s->bindValue(':Low', $_POST['low']);
 	$s->bindValue(':HigherIsBetter', $_POST['higherIsBetter']);
 	$s->bindValue(':Id',$_POST['id']);
+	$s->bindValue(':User',$_POST['uname']);
 	$s->execute();
 	}catch (PDOException $e){
 		$error = $e.'Error updating ratio threshold.';

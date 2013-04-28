@@ -21,6 +21,7 @@
 						<td style="background-color:lightgrey;text-align:center;padding-left:2em;padding-right:2em">Low</td>
 						<td style="background-color:lightgrey;text-align:center;padding-left:2em;padding-right:2em">IsHighBetter?</td>
 						<td style="background-color:lightgrey;text-align:center;padding-left:2em;padding-right:2em"></td>
+						<td style="background-color:lightgrey;text-align:center;padding-left:2em;padding-right:2em">Last Editor</td>
 				<?php if(!empty($Ratios)): ?>
 						<?php foreach ($Ratios as $Ratio): ?>
 							<form action="?" method="post">
@@ -37,7 +38,9 @@
 																<?php if($Ratio['higherIsBetter'] ==0){htmlout('checked');}  ?>/>
 										</td>
 										<input type="hidden" name="id" value="<?php echo $Ratio['id']; ?>">
+										<input  name="uname" value="<?php echo $_SESSION['userName'] ?>">
 										<td style="text-align:center;padding-left:2em;padding-right:2em"><input type="submit" name="action" value="update"></td>
+										<td style="text-align:center;padding-left:2em;padding-right:2em"><?php htmlout($Ratio['lastEditor']);?></td>
 									</tr>
 							</form>
 						<?php endforeach; else:?><p>No Ratios</p> <?php endif;?>
