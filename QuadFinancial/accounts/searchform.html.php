@@ -9,7 +9,19 @@
 		<link rel="stylesheet" type="text/css" href="/javascript/jquery.AddIncSearch-master/jquery.AddIncSearch.css">
 		<meta charset="utf-8">
 		<title>Manage Accounts</title>
-
+		<link rel="stylesheet" type="text/css" href="/javascript/jquery.AddIncSearch-master/jquery.AddIncSearch.css">
+		<script type="text/javascript" src="/javascript/jquery-1.3.2.min.js"></script>
+		 <script type="text/javascript" src="/javascript/jquery.AddIncSearch-master/jquery.AddIncSearch.js"></script>
+		 <script type="text/javascript">
+		 jQuery(document).ready(function() {
+		    jQuery("select").AddIncSearch({
+			maxListSize: 5,
+			maxMultiMatch: 15,
+			warnMultiMatch: 'top {0} matches ...',
+			warnNoMatch: 'no matches ...'
+		    });
+		 });
+	 </script>
 	</head>
 	<body>
 		<?php  include $_SERVER['DOCUMENT_ROOT'] .'/QuadFinancial/header.inc.html.php'; ?>
@@ -21,20 +33,20 @@
 						<th colspan="2"><p>View accounts satisfying the following criteria:</p></th>
 					</tr>
 					<tr>
-							<th><label for="name">Search by name:</label></th>
-							<td><input type="text" name="name" id="name" placeholder="name search"></td>
+						<th style="text-align:left;padding-left:2em"><label for="name">Search by name:</label></th>
+						<td><input type="text" name="name" id="name" placeholder="name search"></td>
 					</tr>
 					<tr>
-							<th><label for="description">Containing description:</label></th>
-							<td><input type="text" name="description" id="description" placeholder="description search"></td>
+						<th style="text-align:left;padding-left:2em"><label for="description">Containing description:</label></th>
+						<td><input type="text" name="description" id="description" placeholder="description search"></td>
 					</tr>
 					<tr>
-						<th>
-							<label for="user">By User:</label>
-						</th>
+						<th style="text-align:left;padding-left:2em">
+							<label for="user" >By User:</label>
+						</td>
 						<td >
-							<select name="user" id="user" >
-								<option value="">Any User</option>
+							<select name="user" >
+								<option value=""></option>
 								<?php foreach ($users as $user): ?>
 									<option value="<?php htmlout($user['id']); ?>"><?php htmlout($user['name']); ?></option>
 								<?php endforeach; ?>
@@ -42,12 +54,12 @@
 						</td>
 					</tr>
 					<tr>
-						<th>
+						<th style="text-align:left;padding-left:2em">
 							<label for="category">By Category:</label>
 						</th>
 						<td>
-							<select name="category" id="category">
-								<option value="">Any Category</option>
+							<select name="category">
+								<option value=""></option>
 								<?php foreach ($categories as $category): ?>
 									<option value="<?php htmlout($category['id']); ?>"><?php htmlout($category['name']); ?></option>
 								<?php endforeach; ?>
@@ -55,7 +67,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th>Deleted:</th>
+						<th style="text-align:left;padding-left:2em">Deleted:</th>
 						<td>
 							no<input type="radio" name="isDeleted" value="FALSE" id="FALSE" checked>
 							yes<input type="radio" name="isDeleted" value="TRUE" id="TRUE">
