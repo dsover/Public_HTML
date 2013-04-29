@@ -104,10 +104,8 @@ if($_POST['action'] == 'addLine'){
 		include 'form.html.php';
 		return  FALSE;
 	}else{ $GLOBALS{'creditError'} = '';}
-//echo var_dump($lineItem);exit();
 	try{
 	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
-		//$pdo->beginTransaction();
 		$sql = "Insert Into JournalEntry set
 				Description = :description,
 				CreatedOn = NOW(),
@@ -171,7 +169,6 @@ if(isset($_GET['pendingJournals']) || $sortForm == 'pending'){
 	$header = 'Pending'; 
 	$Entries = getPendingEntries($sortType);
 	include 'journals.html.php';
-var_dump($sortType);
 	exit();
 }
 if(isset($_GET['deletedJournals']) || $sortForm == 'deleted'){
@@ -242,6 +239,7 @@ if (isset($_POST['deleteEntry'])){
 	try{
 		$sql = 'UPDATE JournalEntry SET 
 							Deleted = TRUE,
+							DeletedOn = NOW(),
 							AuthorizerUserId = :UserId
 			WHERE Id = :journalId;';
 		$s=$pdo->prepare($sql);
@@ -323,6 +321,7 @@ function getPendingEntries($s){
 							,dp.Amount as "currency"
 							,u.UserName as "userName"
 							,je.SupportingDocumentName as "thisFileName"
+							,je.CreatedOn as "changeDate"
 						FROM 
 							JournalEntry je
 							join DataPoints dp on dp.JournalEntryId = je.Id
@@ -357,7 +356,9 @@ function getPendingEntries($s){
 						$description = $thisDescription,
 						$lineItems,
 						$thisUserId,
-						$thisFileName);
+						$thisFileName,
+						$ThisSpotIsEmptySoItWorksWithAllOtherJournalPages,
+						$changeDate = $thisChangeDate);
 					$lineItems = array();
 					$lineItems[] =	array('lineId' => $k,
 							'accountId' => $row['accountId'],
@@ -372,13 +373,17 @@ function getPendingEntries($s){
 		$thisDescription = $row['description'];
 		$journalIdFlag =$row['thisJournalId'];
 		$thisFileName = $row['thisFileName'];
+		$thisChangeDate = $row['changeDate'];
+
 	} 
 	$lastEntry[] = array(	$JournalId = $thisJournalId,
 						$date = $thisDate ,
 						$description = $thisDescription,
 						$lineItems,
 						$thisUserId,
-						$thisFileName);
+						$thisFileName,
+						$ThisSpotIsEmptySoItWorksWithAllOtherJournalPages,
+						$changeDate = $thisChangeDate);
 	if($pendingEntries){
 		$pendingEntries = array_merge($pendingEntries,$lastEntry);
 	}else{
@@ -401,6 +406,7 @@ function getDeletedEntries($s){
 							,u.UserName as "userName"
 							,je.SupportingDocumentName as "thisFileName"
 							,u2.UserName as "AuthorizerName"
+							,je.DeletedOn as "changeDate"
 						FROM 
 							JournalEntry je
 							join DataPoints dp on dp.JournalEntryId = je.Id
@@ -438,7 +444,8 @@ function getDeletedEntries($s){
 						$lineItems,
 						$thisUserId,
 						$thisFileName,
-						$thisAdmin);
+						$thisAdmin,
+						$thisChangeDate);
 					$lineItems = array();
 					$lineItems[] =	array('lineId' => $k,
 							'accountId' => $row['accountId'],
@@ -455,6 +462,7 @@ function getDeletedEntries($s){
 		$journalIdFlag =$row['thisJournalId'];
 		$thisFileName = $row['thisFileName'];
 		$thisAdmin = $row['AuthorizerName'];
+		$thisChangeDate = $row['changeDate'];
 	} 
 	$lastEntry[] = array(	$JournalId = $thisJournalId,
 						$date = $thisDate ,
@@ -462,7 +470,8 @@ function getDeletedEntries($s){
 						$lineItems,
 						$thisUserId,
 						$thisFileName,
-						$thisAdmin);
+						$thisAdmin,
+						$thisChangeDate);
 	if($deletedEntries){
 		$deletedEntries = array_merge($deletedEntries,$lastEntry);
 	}else{
@@ -486,6 +495,7 @@ function getPostedEntries($s){
 							,u.UserName as "userName"
 							,je.SupportingDocumentName as "thisFileName"
 							,u2.UserName as "AuthorizerName"
+							,je.PostedOn as "changeDate"
 						FROM 
 							JournalEntry je
 							join DataPoints dp on dp.JournalEntryId = je.Id
@@ -523,7 +533,8 @@ function getPostedEntries($s){
 						$lineItems,
 						$thisUserId,
 						$thisFileName,
-						$thisAdmin);
+						$thisAdmin,
+						$thisChangeDate);
 					$lineItems = array();
 					$lineItems[] =	array('lineId' => $k,
 							'accountId' => $row['accountId'],
@@ -540,6 +551,7 @@ function getPostedEntries($s){
 		$journalIdFlag =$row['thisJournalId'];
 		$thisFileName = $row['thisFileName'];
 		$thisAdmin = $row['AuthorizerName'];
+		$thisChangeDate = $row['changeDate'];
 	} 
 	$lastEntry[] = array(	$JournalId = $thisJournalId,
 						$date = $thisDate ,
@@ -547,7 +559,8 @@ function getPostedEntries($s){
 						$lineItems,
 						$thisUserId,
 						$thisFileName,
-						$thisAdmin);
+						$thisAdmin,
+						$thisChangeDate);
 	if($postedEntries){
 		$postedEntries = array_merge($postedEntries,$lastEntry);
 	}else{

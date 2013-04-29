@@ -45,6 +45,7 @@
 							$user = $k[4];
 							$admin = $k[6];
 							$fileName = $k[5];
+							$changeDate = $k[7];
 							$_SESSION['$journalLineItems'] = count($k[3]);
 							include 'form.html.php'; 
 					?>
