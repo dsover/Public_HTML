@@ -1,13 +1,20 @@
-Filter by date on the journal pages
-add the date on the journal page
-
-on the posted page add poster
-on deleted page add who deleted
-
-
-when journal id is pressed on chart of accounts show the posted journal entry
-
-multipul file upload
+--Done--//Type on account page is not validated------Defaulted to Asset
+--Done--//Add in who updated ratio
+--Done--//Sort by date on the journal pages
+--Done--//on the posted page add poster
+--Done--//on deleted page add who deleted
+--Done--//fix layout of account search
+--Done--//add the date on the journal page
+--Done--//when journal id is pressed on chart of accounts show the posted journal entry
 
 
-Add in who updated ratio
+--Add To future update--//multipul file upload
+--Add To future update--//add complexity check to password add/change
+--Add To future update--//add company sandbox to allow many departments/companies to use the product at one time
+--Add To future update--//add branding for individual companies
+--Add To future update--//add fuctionality to automaticly close nominal accounts for the current accounting period
+--Add To future update--//add more ratios for ratio dashboard
+--Add To future update--//make ratio dashboard update in real time
+--Add To future update--//ablity for user to send administrator email if they experiance email
+--Add To future update--//further logging need to determine all logging points
+
