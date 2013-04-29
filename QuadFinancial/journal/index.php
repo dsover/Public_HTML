@@ -187,6 +187,15 @@ if(isset($_GET['postedJournals']) || $sortForm == 'posted'){
 	include 'journals.html.php';
 	exit();
 }
+if(isset($_GET['singleJournal'])){
+	$accounts = getAccounts();
+	$review = 1; 
+	$header = 'Single'; 
+	$Entries = getSingleEntry($_GET['id']);
+	include 'journals.html.php';
+	echo('<A HREF="javascript:history.back()">Back</A>');
+	exit();
+}
 if(isset($_GET['getFile'])){
 	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
 	try{
@@ -505,6 +514,94 @@ function getPostedEntries($s){
 						WHERE
 							 je.Posted = TRUE';
 		$postedSql = $postedSql . $s;
+		$journals = $pdo->query($postedSql);
+		$journals->setFetchMode(PDO::FETCH_ASSOC);
+	}catch (PDOException $e){
+	$error = 'Error fetching Posted Journal Entries: ' . $e->getMessage();
+	include 'error.html.php'; 
+	exit(); 
+	}
+	$first= TRUE;
+	foreach($journals as $k => $row){ 
+		If($first){
+			$journalIdFlag =$row['thisJournalId'];
+			$first=FALSE;
+		}
+		if(($journalIdFlag) == ($row['thisJournalId'])){
+			$lineItems[] =	array('lineId' => $k,
+							'accountId' => $row['accountId'],
+							'accountName' => $row['accountName'],
+							'debitOrCredit' => $row['debitOrCredit'],
+							'currency' => $row['currency'],
+							'user' => $row['userName']
+						);
+		}else{		
+					$postedEntries[] = array($JournalId =$thisJournalId,
+						$date = $thisDate ,
+						$description = $thisDescription,
+						$lineItems,
+						$thisUserId,
+						$thisFileName,
+						$thisAdmin,
+						$thisChangeDate);
+					$lineItems = array();
+					$lineItems[] =	array('lineId' => $k,
+							'accountId' => $row['accountId'],
+							'accountName' => $row['accountName'],
+							'debitOrCredit' => $row['debitOrCredit'],
+							'currency' => $row['currency'],
+							'user' => $row['userName']
+						);
+		}
+		$thisUserId = $row['userName'];
+		$thisJournalId = $row['thisJournalId'];
+		$thisDate = $row['date'];
+		$thisDescription = $row['description'];
+		$journalIdFlag =$row['thisJournalId'];
+		$thisFileName = $row['thisFileName'];
+		$thisAdmin = $row['AuthorizerName'];
+		$thisChangeDate = $row['changeDate'];
+	} 
+	$lastEntry[] = array(	$JournalId = $thisJournalId,
+						$date = $thisDate ,
+						$description = $thisDescription,
+						$lineItems,
+						$thisUserId,
+						$thisFileName,
+						$thisAdmin,
+						$thisChangeDate);
+	if($postedEntries){
+		$postedEntries = array_merge($postedEntries,$lastEntry);
+	}else{
+		$postedEntries = $lastEntry;
+	}
+	return $postedEntries;
+}
+
+
+function getSingleEntry($thisId){
+	try{
+		include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+		$postedSql = 'SELECT 	je.Id as "thisJournalId"
+							,date(je.Date) as "date"
+							,je.Description as "description"
+							,a.Id as "accountId"
+							,a.Name as "accountName"
+							,dp.DebitOrCredit as "debitOrCredit"
+							,dp.Amount as "currency"
+							,u.UserName as "userName"
+							,je.SupportingDocumentName as "thisFileName"
+							,u2.UserName as "AuthorizerName"
+							,je.PostedOn as "changeDate"
+						FROM 
+							JournalEntry je
+							join DataPoints dp on dp.JournalEntryId = je.Id
+							join Account a on a.Id = dp.AccountId
+							join User u on je.PosterUserId = u.Id
+							join User u2 on je.AuthorizerUserId = u2.Id
+						WHERE
+							 je.Posted = TRUE';
+		$postedSql = $postedSql . " And je.Id =" . $thisId ;
 		$journals = $pdo->query($postedSql);
 		$journals->setFetchMode(PDO::FETCH_ASSOC);
 	}catch (PDOException $e){

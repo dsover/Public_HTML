@@ -99,7 +99,8 @@
 		<?php if($review ==1 ): ?><b>Created By: &nbsp<?php htmlout($user);?></b><?php endif?>
 		<?php if($header == 'Pending' ): ?><br><b>Date Created: <?php htmlout($changeDate);?></b> <?php endif?>
 		<?php if($header == 'Deleted'): ?><br><b>Deleted By:&nbsp&nbsp&nbsp<?php htmlout($admin);?></b><br><b>Date Deleted: <?php htmlout($changeDate);?></b><?php endif?>
-		<?php if($header == 'Posted'): ?><br><b>Posted By:&nbsp&nbsp&nbsp <?php htmlout("$admin");?></b><br><b>Date Posted: <?php htmlout($changeDate);?></b><?php endif?>
+		<?php if($header == 'Posted' || $header == 'Single'): ?><br><b>Posted By:&nbsp&nbsp&nbsp <?php htmlout("$admin");?></b><br><b>Date Posted: <?php htmlout($changeDate);?></b><?php endif?>
+
 		<?php if(!$review): ?></div><?php endif ?>
 	</body>
 </html>
