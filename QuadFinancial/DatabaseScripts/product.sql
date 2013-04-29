@@ -98,6 +98,7 @@ CREATE TABLE `JournalEntry` (
   CONSTRAINT `fk_journalentry_authorizer` FOREIGN KEY (`AuthorizerUserId`) REFERENCES `User` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ;
+Alter Table JournalEntry Add column DeletedOn timestamp NOT Null DEFAULT '0000-00-00 00:00:00';
 ----------------------------------------------------------------------------------------------------
 --DataPoints
 ----------------------------------------------------------------------------------------------------
