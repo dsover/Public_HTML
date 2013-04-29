@@ -55,7 +55,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<th style="text-align:left;padding-left:5em">Total Assets</td>
+					<th style="text-align:left;padding-left:3em">Total Assets</td>
 					<td></td>
 					<th style="text-align:right;padding-right:5em">$ <?php htmlout(curFormat($assetsTotal)); ?></td>
 				</tr>
