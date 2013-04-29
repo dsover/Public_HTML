@@ -44,7 +44,7 @@
 					<legend>Type</legend>
 						<div>
 							<label for ="type">
-								<input type="radio" name="type" value="Asset" id="type" <?php if ( $type == "ASSET"){htmlout('checked');}  ?>/>Asset</br>
+								<input type="radio" name="type" value="Asset" id="type" checked/>Asset</br>
 								<input type="radio" name="type" value="Dividend" id="type" <?php if ( $type == "DIVIDEND"){htmlout('checked');}  ?>/>Dividend</br>
 								<input type="radio" name="type" value="Expense" id="type" <?php if ( $type == "EXPENSE"){htmlout('checked');}  ?>/>Expense</br>
 								<input type="radio" name="type" value="Liability" id="type" <?php if ( $type == "LIABILITY"){htmlout('checked');}  ?>/>Liability</br>
@@ -71,7 +71,7 @@
 						<div>
 							<label for ="isInventory">
 								<input type="radio" name="isInventory" value="1" id="type" <?php if ( $isInventory == 1){htmlout('checked');}  ?>/>Yes</br>
-								<input type="radio" name="isInventory" value="0" id="type" <?php if ( $isInventory != 1){htmlout('checked');}  ?>/>No</br>
+								<input type="radio" name="isInventory" value="0" id="type" <?php if ( $isInventory == 0){htmlout('checked');}  ?>/>No</br>
 						</div>
 				</fieldset>
 				<div>
@@ -88,8 +88,8 @@
 			frmvalidator.addValidation("accountCode","numeric","Code must be a number");
 			frmvalidator.addValidation("description","req","Must have a description");
 			frmvalidator.addValidation("normalBalance","selone_radio","Must choose a Normal Balance");
-			frmvalidator.addValidation("type","selone_radio","Must choose an account type");
 			frmvalidator.addValidation("categoryId","selone_radio","Must choose a Category");
+			frmvalidator.addValidation("type","selone_radio","Must choose a type");
 			frmvalidator.addValidation("isInventory","selone_radio","Must choose a selection for Is Inventory");
 
 		</script>
