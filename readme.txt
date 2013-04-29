@@ -1,4 +1,4 @@
-This is the Application Domain project for Spring 2013
+This is the Application Domain project for Spring 2013 at Southern Polytechnic State University
 
 GroupName: QuadFinancial
 
