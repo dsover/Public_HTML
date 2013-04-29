@@ -149,6 +149,7 @@
 								<li><span><b>Chart of accounts ---</b> Can be accessed from the tool bar. Once accessed, click "view" to view the account ledger for a specific account</span></li>
 								<li><span><b>Account Ledger ---</b>Contains detailed information about a specific account's posted journal entries</span></li>
 							</ol>
+							<p>You can view the full journal entry of a line in the account ledger by clicking on the "Journal #" for that line</p>
 						</div>
 				</li>
 				<li>
