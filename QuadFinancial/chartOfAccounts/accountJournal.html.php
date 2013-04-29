@@ -54,7 +54,7 @@
 			<?php if(!empty($accountEntries)):
 				 foreach($accountEntries as $line): ?>
 				<tr>
-					<td style="text-align:center;border:none"><a href="/QuadFinancial/journal/?singleJournal&id=<?php htmlout($line['JournalId']) ?>"><?php htmlout($line['JournalId']) ?></a></td>
+					<td style="text-align:center;border:none"><a href="/QuadFinancial/journal/?singleJournal&id=<?php htmlout($line['JournalId']) ?>" target="_blank"><?php htmlout($line['JournalId']) ?></a></td>
 					<td style="text-align:center;border:none"><?php htmlout($line['date']) ?></td>
 					<td style=";text-align:right;padding-right:5em;border:none"><?php if($line['debitOrCredit'] == "debit"){htmlout(curFormat($line['amount']));} ?></td>
 					<td style=";text-align:right;padding-right:5em;border:none"><?php if($line['debitOrCredit'] == "credit"){htmlout(curFormat($line['amount']));} ?></td>

@@ -193,7 +193,7 @@ if(isset($_GET['singleJournal'])){
 	$header = 'Single'; 
 	$Entries = getSingleEntry($_GET['id']);
 	include 'journals.html.php';
-	echo('<A HREF="javascript:history.back()">Back</A>');
+	echo('<a href="JavaScript:window.close()" style="margin-left:1200px;">Close</a>');
 	exit();
 }
 if(isset($_GET['getFile'])){
