@@ -1,18 +1,11 @@
---------------------------------------------------
---UserType
---------------------------------------------------
 Insert Into UserType (Id,Name) values
 ('1','manager'),
-('2','employee');
---------------------------------------------------
---User
---------------------------------------------------
+('2','employee')
+;
 Insert Into User (Id,UserName,Password,ResetNextLogin,PasswordDate,UserTypeId,IsLocked) Values
 (1,'QuadManager1',md5('123!trueSeed'),0,NOW(),1,0),
-(2,'QuadEmployee1',md5('123!trueSeed'),0,NOW(),2,0);
---------------------------------------------------
---Category
---------------------------------------------------
+(2,'QuadEmployee1',md5('123!trueSeed'),0,NOW(),2,0)
+;
 Insert Into Category (Id,Name,Description,UserId) Values
 (1,'Current Assets','test',1),
 (2,'Property, Plant & Equipment','test',1),
@@ -25,10 +18,8 @@ Insert Into Category (Id,Name,Description,UserId) Values
 (9,'Fringe Benefit Costs','test',1),
 (10,'Overhead Costs','test',1),
 (11,'General & Administrative (G&A) Costs','test',1),
-(12,'Unallowable Costs','test',1);
---------------------------------------------------
---Accounts        Insert Into AccountCategory (Id,AccountId,CategoryId) Values
---------------------------------------------------
+(12,'Unallowable Costs','test',1)
+;
 Insert Into Account (Id,Name,InitialBalance,Code,CategoryId,UserId,Description,NormalBalance,Type) Values
 (1,'Cash',0.00,1000,1,1,'test','DEBIT','ASSET'),
 (2,'Accounts Receivable',0.00,1020,1,1,'test','DEBIT','ASSET'),
@@ -70,15 +61,6 @@ Insert Into Account (Id,Name,InitialBalance,Code,CategoryId,UserId,Description,N
 ;
 UPDATE Account set isInventory = 1 WHERE Id in (3)
 ;
---------------------------------------------------
---Journal Entries
---------------------------------------------------
---------------------------------------------------
---DataPoints
--------------------------------------------------
---------------------------------------------------
---RatioThresholds
--------------------------------------------------
 INSERT INTO RatioThreshold (Name,High,Low,HigherIsBetter) values
 ('debtToEquity',100,50,1),
 ('current',100,50,1),

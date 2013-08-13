@@ -1,10 +1,6 @@
 Drop DATABASE IF EXISTS `QuadFinancial`;
 CREATE DATABASE `QuadFinancial` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE QuadFinancial;
--- Tables
-----------------------------------------------------------------------------------------------------
---UserType
-----------------------------------------------------------------------------------------------------
 CREATE TABLE `UserType` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
@@ -13,9 +9,6 @@ CREATE TABLE `UserType` (
   UNIQUE KEY (`Name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ;
-----------------------------------------------------------------------------------------------------
---Users
-----------------------------------------------------------------------------------------------------
 CREATE TABLE `User` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserName` varchar(255) NOT NULL,
@@ -31,9 +24,6 @@ CREATE TABLE `User` (
   CONSTRAINT `fk_user_usertype` FOREIGN KEY (`UserTypeid`) REFERENCES `UserType` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ;
-----------------------------------------------------------------------------------------------------
---Category
-----------------------------------------------------------------------------------------------------
 CREATE TABLE `Category` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
@@ -48,9 +38,6 @@ CREATE TABLE `Category` (
   CONSTRAINT `fk_category_user` FOREIGN KEY (`UserId`) REFERENCES `User` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ;
-----------------------------------------------------------------------------------------------------
---Accounts
-----------------------------------------------------------------------------------------------------
 CREATE TABLE `Account` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
@@ -74,9 +61,6 @@ CREATE TABLE `Account` (
 ;
 ALTER TABLE Account ADD isInventory tinyint(1)
 ;
-----------------------------------------------------------------------------------------------------
---JournalEntries
-----------------------------------------------------------------------------------------------------
 CREATE TABLE `JournalEntry` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Description` varchar(512) NOT NULL,
@@ -99,9 +83,6 @@ CREATE TABLE `JournalEntry` (
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
 ;
 Alter Table JournalEntry Add column DeletedOn timestamp NOT Null DEFAULT '0000-00-00 00:00:00';
-----------------------------------------------------------------------------------------------------
---DataPoints
-----------------------------------------------------------------------------------------------------
 CREATE TABLE `DataPoints` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `JournalEntryId` int(11) NOT NULL,
