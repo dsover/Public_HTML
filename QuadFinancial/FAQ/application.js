@@ -1,5 +1,5 @@
 $(document).ready(function() {
   $('#header ').click(function() {
-		$(this).nextAll("div:next").slideToggle(600,"linear");
+		$(this).nextAll("div:next").slideToggle(200,"linear");
   });
 });

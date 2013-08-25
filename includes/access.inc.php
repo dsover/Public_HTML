@@ -1,10 +1,9 @@
 <?php error_reporting (E_ALL ^ E_NOTICE);
-
+if (empty($_SESSION[''])){
+	session_start();
+}
 function userIsLoggedIn(){
-
 	if (isset($_POST['action']) and $_POST['action'] == 'login'){
-
-
 		if (!isset($_POST['userName']) or $_POST['userName'] == '' or
 			!isset($_POST['password']) or $_POST['password'] == ''){
 			$GLOBALS['loginError'] = 'Please fill in both fields';
@@ -12,14 +11,12 @@ function userIsLoggedIn(){
 		}
 		$password = md5($_POST['password'] . '!trueSeed');
 		if (databaseContainsAuthor($_POST['userName'], $password)){
-		session_start();
 			$_SESSION['loggedIn'] = TRUE;
 			$_SESSION['userName'] = $_POST['userName'];
 			$_SESSION['password'] = $password ;
 			unset($_SESSION['failedLogins']);
 			return TRUE;
 		}else{
-			session_start();
 			$_SESSION['lock'] = FALSE;
 			$_SESSION['failedLogins'] = 1 +$_SESSION['failedLogins'] ;
 			unset($_SESSION['loggedIn']);
@@ -39,7 +36,6 @@ function userIsLoggedIn(){
 				$GLOBALS['passChangeError'] = 'Please fill in the password field';
 		}else{
 			try{
-				session_start();
 				include 'db.inc.php';
 				$sql = "UPDATE User SET 
 						Password = md5(:newpassword),
@@ -58,24 +54,20 @@ function userIsLoggedIn(){
 			}
 		}
 }
-
 	if (isset($_POST['action']) and $_POST['action'] == 'logout'){
-		session_start();
 		unset($_SESSION['loggedIn']);
 		unset($_SESSION['userName']);
 		unset($_SESSION['password']);
 		unset($_SESSION['passAge']);
 		unset($_SESSION['userId']);
+		unset($_SESSION['header']);
 		header('Location: ' . $_POST['goto']);
 		exit();
 	}
-
-	session_start();
 	if (isset($_SESSION['loggedIn'])){
 		return databaseContainsAuthor($_SESSION['userName'],$_SESSION['password']);
 	}
 }
-
 function databaseContainsAuthor($userName, $password){
 	include 'db.inc.php';
 	try{
@@ -97,7 +89,6 @@ function databaseContainsAuthor($userName, $password){
 	}
 	$row = $s->fetch();
 	if ($row[0] > 0){ 
-		session_start();
 		$diff = $row[1] - $row[0];
 		
 		$_SESSION['userId'] = $row['Id'];
@@ -109,7 +100,6 @@ function databaseContainsAuthor($userName, $password){
 		return FALSE;
 	}
 }
-
 function userHasRole($userTypeId){
 	include 'db.inc.php';
 	try{
